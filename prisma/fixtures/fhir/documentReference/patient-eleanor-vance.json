@@ -1,0 +1,78 @@
+[
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-eleanor-vance-pmr-f2f-eval",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "11488-4",
+          "display": "Consult note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-eleanor-vance"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-power-wheelchair"
+        }
+      ]
+    },
+    "date": "2026-04-15T14:30:00Z",
+    "description": "PM&R Face-to-Face Evaluation \u2014 patient-eleanor-vance",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-eleanor-vance-pmr-f2f-eval",
+          "title": "PM&R Face-to-Face Evaluation \u2014 patient-eleanor-vance"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-eleanor-vance-pt-mobility-assessment",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "28570-0",
+          "display": "Provider-unspecified Procedure note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-eleanor-vance"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-power-wheelchair"
+        }
+      ]
+    },
+    "date": "2026-04-18T11:00:00Z",
+    "description": "PT Functional Mobility Assessment \u2014 patient-eleanor-vance",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-eleanor-vance-pt-mobility-assessment",
+          "title": "PT Functional Mobility Assessment \u2014 patient-eleanor-vance"
+        }
+      }
+    ]
+  }
+]

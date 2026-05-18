@@ -1,0 +1,104 @@
+{
+  "id": "policy-uhc-power-wheelchair-group3",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-PWC-GROUP3-MA",
+  "title": "Power Mobility Devices — Group 3 Power Wheelchair (K0820–K0864) — UHC Medicare Advantage Policy",
+  "effectiveFrom": "2025-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/power-mobility-devices-cs.pdf",
+  "sourceText": "Coverage criteria for Group 3 power wheelchairs (K0856) and accessory power tilt option (K0108) under UHC Medicare Advantage HMO plans, aligned with CMS National Coverage Determination 280.3 and Local Coverage Determination L33789. Group 3 PWCs require ATP involvement and additional documentation beyond Group 2.",
+  "codes": [
+    {
+      "id": "pcode-k0856",
+      "codeType": "HCPCS",
+      "code": "K0856",
+      "modifier": null,
+      "posCodes": []
+    },
+    {
+      "id": "pcode-k0108",
+      "codeType": "HCPCS",
+      "code": "K0108",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-pwc-1",
+      "ordinal": 1,
+      "text": "Beneficiary has a face-to-face encounter with a physician or qualified non-physician practitioner within 6 months prior to the written order for the power mobility device. The encounter must specifically address the mobility examination supporting the medical necessity of the device.",
+      "evidenceHint": "Look for a documented in-person clinical evaluation by a physician (especially PM&R, Internal Medicine, or Neurology) explicitly noting it is a face-to-face encounter for a power mobility device. The date of the encounter must be within 6 months prior to the standard written order.",
+      "uploadHint": "Upload the face-to-face evaluation note from the prescribing or attesting physician, dated within 6 months of the written order.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-2",
+      "ordinal": 2,
+      "text": "Beneficiary has a mobility limitation that significantly impairs the ability to perform mobility-related activities of daily living (MRADLs) within the home — toileting, feeding, dressing, grooming, and bathing — that cannot be sufficiently resolved by use of a cane, walker, or manual wheelchair.",
+      "evidenceHint": "Look for documentation describing how the patient cannot safely or independently perform specific in-home MRADLs. Specific examples (e.g. cannot transfer to toilet, cannot reach the kitchen, falls during attempts) carry more weight than general statements.",
+      "uploadHint": "Upload a PM&R evaluation or PT functional mobility assessment that describes specific MRADL limitations within the home.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-3",
+      "ordinal": 3,
+      "text": "Beneficiary has a documented step-by-step consideration of the Mobility Assistive Equipment (MAE) algorithm: cane/crutch → walker → manual wheelchair → power-operated vehicle (POV) → power wheelchair. Each lower-level device must be documented as not feasible, inadequate, or unsafe before progressing to a power wheelchair, with the power wheelchair representing the LEAST RESTRICTIVE device that meets the beneficiary's needs.",
+      "evidenceHint": "Look for explicit statements in the F2F evaluation or PT note discussing each MAE step and why it is not feasible/adequate. Generic statements such as 'patient needs power chair' do not satisfy this requirement; the documentation must walk through cane, walker, manual wheelchair, and POV.",
+      "uploadHint": "Upload the PM&R face-to-face evaluation or PT functional mobility assessment with explicit MAE step-by-step justification.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-4",
+      "ordinal": 4,
+      "text": "For Group 3 PWCs (K0848-K0864): assessment by an Assistive Technology Professional (ATP) certified by RESNA, performed in-person, including a home accessibility evaluation confirming the device fits and can be safely operated within the beneficiary's residence (doorway widths, turning radii, threshold and ramp accessibility).",
+      "evidenceHint": "Look for an ATP/RESNA-certified evaluation note explicitly documenting in-home assessment with measurements (doorway widths, turning radii). The evaluator must be identified as an ATP/SMS or hold equivalent RESNA credentialing.",
+      "uploadHint": "Upload the supplier ATP evaluation including the in-home accessibility assessment.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-5",
+      "ordinal": 5,
+      "text": "Beneficiary has the mental capacity, motor function, vision, and judgment to safely operate the power wheelchair, OR a caregiver who is consistently available and trained will operate the device. Cognitive screen (e.g. MoCA, MMSE) and demonstration of safe device operation should be documented.",
+      "evidenceHint": "Look for a cognitive assessment score (e.g. MoCA, MMSE) and a clinician statement that the beneficiary safely operated a demonstration device, or alternatively documentation of a trained caregiver who will be the primary operator.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-6",
+      "ordinal": 6,
+      "text": "Standard Written Order (SWO) is on file containing all seven required elements per CMS: (1) beneficiary name, (2) date of order, (3) general description of the item (PWC, K-code), (4) specific HCPCS code, (5) prescribing practitioner's name and NPI, (6) signature of the prescriber, (7) date the order was signed.",
+      "evidenceHint": "Look for explicit confirmation that a Standard Written Order is on file with all seven elements. A reference to 'SWO with 7 elements on file' in the F2F note or supplier documentation satisfies this.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-pwc-7",
+      "ordinal": 7,
+      "text": "Power tilt option (K0108) when billed separately requires medical necessity justification: documented inability to weight-shift independently and resulting risk of pressure ulcers or impaired postural control, OR documented spasticity, autonomic dysreflexia, or trunk-control deficits requiring repositioning that cannot be achieved manually.",
+      "evidenceHint": "Look for explicit clinician statements describing why power tilt is medically necessary — e.g. patient cannot weight-shift independently due to neuromuscular weakness; patient has documented pressure-ulcer risk; patient has spasticity that benefits from periodic tilt repositioning.",
+      "uploadHint": "Upload PM&R or ATP documentation explaining the medical necessity for the power tilt option specifically.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

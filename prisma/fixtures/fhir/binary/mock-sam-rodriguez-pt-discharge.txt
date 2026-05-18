@@ -1,0 +1,45 @@
+PHYSICAL THERAPY DISCHARGE SUMMARY
+
+Patient: Sam Rodriguez | DOB: 1972-09-04 | MRN: EHR-SR-001
+PT Provider: Lauren Kim, DPT | Cascade Sports Therapy
+Episode of Care: 2026-02-25 to 2026-04-22 (8 weeks)
+Total Visits: 12 sessions (1.5x/week per protocol)
+Referring MD: Dr. James Patel, Orthopedic Surgery
+
+REASON FOR REFERRAL
+Conservative management of suspected right medial meniscal tear. Patient referred for course of structured PT prior to MRI/surgical decision-making.
+
+INITIAL EXAM (2026-02-25)
+- Right knee pain 6/10 baseline, 9/10 with stairs, pivoting.
+- Mild antalgic gait.
+- ROM right knee: flexion 0-115° (limited by pain at end range), extension 0°.
+- Strength: quadriceps 4-/5, hamstrings 4/5, hip abductors 3+/5 (weak — contributory).
+- Functional limitations: unable to descend stairs reciprocally; unable to squat past 60°; unable to participate in recreational soccer.
+
+INTERVENTION
+Progressive resistance program: quadriceps strengthening, hip abductor activation, hamstring lengthening, proprioception/balance training, gait normalization. Modalities: cryotherapy post-session, manual therapy as tolerated.
+
+PROGRESS BY VISIT 6 (mid-trial)
+- Pain reduced from 6/10 to 4/10 at rest.
+- ROM gains: flexion improved to 0-122°.
+- Strength: quad 4/5, hip abd 4-/5.
+- BUT: continued mechanical symptoms — clicking and intermittent locking with deep flexion.
+
+DISCHARGE EXAM (2026-04-22)
+- Pain remains 5-6/10 with provocative activities (stairs, pivoting, prolonged standing).
+- Mechanical symptoms persist: positive McMurray reproduces pain and click. Clinical pattern UNCHANGED from initial.
+- Strength: quad 4+/5, hip abd 4/5 — improved but symptoms unchanged.
+- Patient unable to return to recreational soccer; functional limitations persist.
+
+ASSESSMENT
+Patient has completed an 8-week structured PT trial (12 visits) with documented progressive home exercise compliance. Strength has improved; however, mechanical symptoms (clicking, locking, McMurray-positive findings) and pain with provocative activities have NOT resolved. Pattern is consistent with a structural intra-articular lesion not amenable to conservative management alone.
+
+RECOMMENDATIONS
+1. Failed conservative management — refer back to Dr. Patel (Orthopedic Surgery) for advanced imaging (MRI) and surgical consultation.
+2. Continue home exercise program for maintenance during workup.
+3. Avoid pivoting and high-impact activities until evaluated.
+
+PT trial documented as complete. Patient discharged to physician care.
+
+Signed: Lauren Kim, DPT | Cascade Sports Therapy | License #PT-WA-44128
+Date: 2026-04-22

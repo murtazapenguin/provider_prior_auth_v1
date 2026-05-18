@@ -1,0 +1,78 @@
+[
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-priya-shah-neuro-progress",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "11506-3",
+          "display": "Progress note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-priya-shah"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-botox"
+        }
+      ]
+    },
+    "date": "2026-05-05T11:30:00Z",
+    "description": "Progress \u2014 patient-priya-shah",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-priya-shah-neuro-progress",
+          "title": "Progress \u2014 patient-priya-shah"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-priya-shah-headache-diary",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18842-5",
+          "display": "Discharge summary"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-priya-shah"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-botox"
+        }
+      ]
+    },
+    "date": "2026-05-05T11:45:00Z",
+    "description": "ScribeNote \u2014 patient-priya-shah",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "application/pdf",
+          "url": "Binary/mock-priya-shah-headache-diary",
+          "title": "ScribeNote \u2014 patient-priya-shah"
+        }
+      }
+    ]
+  }
+]

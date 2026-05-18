@@ -1,0 +1,91 @@
+PHYSICAL THERAPY DISCHARGE SUMMARY
+
+Patient: Sam Rodriguez
+DOB: 1972-09-04
+MRN: EHR-SR-001
+Insurance: United Healthcare Choice Plus | Member ID: UHC9SR00287
+
+Referring Physician: Dr. James Patel, MD — Orthopedic Surgery
+PT Facility: Valley Physical Therapy & Rehabilitation Center
+Primary Therapist: Rachel Kim, DPT
+
+Diagnosis: Internal derangement, right knee; medial meniscal injury (M23.231)
+Date of Initial Evaluation: 2026-03-10
+Date of Discharge: 2026-05-03
+Total Duration of Treatment: 8 weeks
+Treatment Frequency: 2 sessions per week (16 sessions total)
+
+---
+
+PRESENTING COMPLAINT AT INITIAL EVALUATION
+
+Mr. Rodriguez presented with right knee pain rated 7/10 at rest and 9/10 with activity, following a twisting injury sustained during recreational soccer approximately 5 months prior. He reported medial joint line pain, intermittent swelling, and mechanical symptoms (clicking, catching). He was unable to participate in recreational sports and reported significant functional limitation with stairs, squatting, and prolonged walking.
+
+---
+
+TREATMENT PROVIDED (8 weeks, 2x/week)
+
+Weeks 1-2: Pain management and range of motion restoration
+- Therapeutic modalities: ice, electrical stimulation for pain and edema control
+- Passive range of motion exercises
+- Straight leg raises (isometric quad strengthening)
+- Gait training with partial weight-bearing
+
+Weeks 3-4: Progressive strengthening — closed chain exercises
+- Stationary bike (low resistance, pain-free range)
+- Wall slides (0-45 degrees)
+- Terminal knee extensions
+- Standing calf raises
+- Hip abductor strengthening
+
+Weeks 5-6: Functional strengthening and proprioception
+- Mini-squats (0-60 degrees)
+- Step-ups and step-downs (4-inch step progressing to 8-inch)
+- Single-leg balance progression
+- Lateral band walks
+- Proprioceptive training on balance board
+
+Weeks 7-8: Sport-specific exercises and discharge planning
+- Progressive squatting to 90 degrees
+- Lateral shuffles and controlled pivoting
+- Patient education on home exercise program
+- Functional assessment
+
+Concurrent NSAID use per physician orders: Naproxen 500 mg BID throughout the treatment course. Patient reported the naproxen provided partial pain relief during therapy sessions but did not resolve underlying mechanical symptoms.
+
+Activity modification: Patient was instructed to avoid running, pivoting, and recreational soccer throughout the treatment course.
+
+---
+
+OBJECTIVE FINDINGS AT DISCHARGE
+
+Pain: 5/10 at rest, 7/10 with stairs and squatting (compared to 7/10 at rest, 9/10 with activity at initial evaluation)
+Range of Motion: Flexion 0-130 degrees (improved from 0-110 degrees at initial eval)
+Strength: Quadriceps 4+/5, hamstrings 4+/5 (improved from 3+/5 at initial eval)
+Functional Outcome: Patient able to perform single-leg stance 20 seconds (improved from 8 seconds)
+KOOS Score at discharge: 48/100 (compared to 31/100 at initial evaluation)
+
+---
+
+CLINICAL OUTCOME AND RECOMMENDATION
+
+Despite 8 weeks of structured physical therapy at 2 sessions per week, combined with NSAID therapy and activity modification, Mr. Rodriguez experienced limited functional improvement. While there was measurable progress in range of motion and strength, his pain remains significant (5/10 at rest, 7/10 with activity), and he has not returned to his prior level of function. He continues to report medial joint line pain and mechanical symptoms consistent with his initial presentation.
+
+Based on limited functional improvement after an 8-week course of conservative therapy including physical therapy (16 sessions, 2x/week), NSAIDs (naproxen 500 mg BID), and activity modification, it is the recommendation of this therapist that Mr. Rodriguez is an appropriate candidate for further orthopedic evaluation, including MRI imaging to guide clinical decision-making regarding potential surgical intervention.
+
+Conservative therapy has been maximized at this time.
+
+---
+
+HOME EXERCISE PROGRAM PROVIDED AT DISCHARGE
+- Straight leg raises: 3 sets x 15 reps daily
+- Terminal knee extensions: 3 sets x 15 reps daily
+- Mini-squats (0-60 degrees): 3 sets x 10 reps daily
+- Single-leg balance: 3 x 30 seconds each leg daily
+
+---
+
+Signed: Rachel Kim, DPT
+Physical Therapist | Valley PT & Rehabilitation Center
+License: CA-PT-88721
+Date: 2026-05-03

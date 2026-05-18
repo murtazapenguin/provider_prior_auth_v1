@@ -1,0 +1,32 @@
+{
+  "resourceType": "Practitioner",
+  "id": "provider-pcp-sarah-chen",
+  "meta": { "versionId": "1" },
+  "identifier": [
+    { "system": "http://hl7.org/fhir/sid/us-npi", "value": "1234567890" }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Sarah Chen, MD",
+      "family": "Chen",
+      "given": ["Sarah"],
+      "suffix": ["MD"]
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "text": "Internal Medicine",
+        "coding": [
+          {
+            "system": "http://nucc.org/provider-taxonomy",
+            "code": "207R00000X",
+            "display": "Internal Medicine"
+          }
+        ]
+      }
+    }
+  ]
+}

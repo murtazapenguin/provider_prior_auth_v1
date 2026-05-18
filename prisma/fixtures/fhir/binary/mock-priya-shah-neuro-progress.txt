@@ -1,0 +1,99 @@
+NEUROLOGY PROGRESS NOTE
+
+Patient: Priya Shah | DOB: 1985-07-22 | Sex: F | MRN: EHR-PS-001
+Date: 2026-05-05 | Provider: Dr. Aisha Washington, MD | Specialty: Neurology
+Place of Service: Office (POS 11)
+
+---
+
+CHIEF COMPLAINT
+Chronic migraine, escalating frequency, on multiple preventive failures.
+
+---
+
+HISTORY OF PRESENT ILLNESS
+Ms. Priya Shah is a 40-year-old female with an established diagnosis of chronic migraine, presenting today for follow-up and treatment planning. She was diagnosed with chronic migraine by her PCP approximately 4 months ago and referred to neurology for refractory management.
+
+Headache frequency: Patient reports 18 headache days per month for the past 4 months. Of these, 10 are migraine-quality headaches (meeting ICHD-3 criteria: unilateral/bilateral throbbing pain, moderate-to-severe intensity, worsened by physical activity, with associated nausea and/or photophobia/phonophobia). Each migraine episode lasts greater than 4 hours without acute treatment. The remaining 8 headache days per month are tension-type or milder episodes.
+
+Acute treatment: She has been using sumatriptan 100 mg for acute migraine attacks with partial benefit. NSAID therapy (naproxen 500 mg) as needed with limited benefit.
+
+Preventive therapy history:
+1. Propranolol 80 mg daily (beta blocker class): Initiated 8 months ago by her PCP. Trialed for 4 months. Discontinued due to significant worsening of blood pressure management — BP dropped to 90/58 on a consistent basis, causing symptomatic hypotension and dizziness. Despite the BP side effects, migraine frequency worsened during the trial period. Documented failure due to worsening of clinical condition and intolerable adverse effects after an adequate 4-month trial.
+
+2. Topiramate 100 mg daily (antiepileptic class): Initiated 5 months ago. Trialed for 3 months. Discontinued due to intolerable cognitive side effects — patient experienced significant word-finding difficulties, memory impairment, and concentration difficulties that interfered with her professional responsibilities as an attorney. Patient reports "I felt like I couldn't think clearly at all" during the topiramate trial. Documented failure after a 3-month adequate trial due to cognitive adverse effects.
+
+3. Amitriptyline 25 mg nightly (antidepressant/tricyclic class): Trialed amitriptyline 6 weeks then discontinued for moderate sedation. The patient reports persistent morning sedation that impaired her ability to function at work. Note: This trial was 6 weeks in duration, which is below the typically recommended 2-month adequate trial threshold. The discontinuation reason (moderate sedation) may be considered intolerance, though the abbreviated trial duration limits this determination.
+
+Current headache burden: The patient scores 72 on the Migraine Disability Assessment (MIDAS) scale, indicating Grade IV (severe) disability. She has missed 12 work days in the past 3 months due to migraine.
+
+---
+
+PAST MEDICAL HISTORY
+- Chronic migraine (diagnosed 4 months ago)
+- Mild anxiety disorder (on escitalopram 10 mg)
+- No prior neurological procedures
+
+MEDICATIONS
+- Escitalopram 10 mg daily
+- Sumatriptan 100 mg PRN for acute migraine attacks
+- Naproxen 500 mg PRN
+
+ALLERGIES
+- Sulfa drugs (rash)
+
+SOCIAL HISTORY
+- Attorney, married, two children
+- Non-smoker, minimal alcohol
+- High-stress occupation
+
+FAMILY HISTORY
+- Mother: migraines
+- Maternal aunt: chronic migraine
+
+REVIEW OF SYSTEMS
+- Positive: chronic headaches (18 days/month), nausea with migraines, photophobia, phonophobia, functional disability
+- Negative: aura, visual changes, focal neurological deficits, seizures
+
+---
+
+PHYSICAL EXAMINATION
+
+Vital Signs: BP 118/76 mmHg, HR 76 bpm, Weight 135 lbs, Height 5'5"
+
+General: Alert, well-appearing female. No acute distress.
+
+Neurological Examination:
+- Mental status: Alert and oriented x4. Speech fluent. Mood and affect appropriate.
+- Cranial nerves: II-XII intact. Visual fields full to confrontation. Pupils equal, round, reactive to light. No papilledema.
+- Motor: 5/5 strength in all four extremities.
+- Sensation: Intact to light touch and proprioception.
+- Coordination: Finger-nose-finger intact bilaterally. No dysmetria.
+- Reflexes: 2+ throughout. Plantar reflexes downgoing.
+- Gait: Normal.
+
+Head/Neck: No tenderness over sinuses, mastoids, or temporal arteries. No nuchal rigidity.
+
+---
+
+ASSESSMENT
+Chronic migraine without aura, intractable — ICD-10: G43.701. The patient meets diagnostic criteria for chronic migraine (≥15 headache days/month with ≥8 migraine-quality days/month, each lasting ≥4 hours). She has demonstrated failure of adequate trials of at least two distinct preventive medication classes:
+- Beta blocker class: Propranolol — 4-month trial, documented failure (worsening headaches + symptomatic hypotension)
+- Antiepileptic class: Topiramate — 3-month trial, documented failure (intolerable cognitive adverse effects)
+
+The patient meets eligibility criteria for onabotulinumtoxinA (Botox) per the PREEMPT protocol for chronic migraine prophylaxis.
+
+---
+
+PLAN
+1. Initiate onabotulinumtoxinA (Botox) per chronic migraine protocol per PREEMPT: 155 units administered intramuscularly, divided across 31 injection sites across 7 head and neck muscles (corrugator, procerus, frontalis, temporalis, occipitalis, cervical paraspinal muscle group, trapezius) every 12 weeks. Order: HCPCS J0585 — OnabotulinumtoxinA, per unit (155 units total).
+2. Continue sumatriptan 100 mg PRN for acute migraine rescue.
+3. Prior authorization for J0585 to be initiated.
+4. Schedule Botox injection appointment upon PA approval.
+5. Follow-up in 12 weeks after first treatment cycle.
+
+ICD-10 codes:
+- G43.701 — Chronic migraine without aura, intractable, without status migrainosus (primary)
+
+Signed: Dr. Aisha Washington, MD | Neurology | NPI: 1122334455
+Date/Time: 2026-05-05 11:30

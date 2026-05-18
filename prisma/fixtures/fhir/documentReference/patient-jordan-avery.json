@@ -1,0 +1,78 @@
+[
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-jordan-avery-hp",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "11506-3",
+          "display": "Progress note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-jordan-avery"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-head-ct"
+        }
+      ]
+    },
+    "date": "2026-05-05T09:30:00Z",
+    "description": "H&P \u2014 patient-jordan-avery",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-jordan-avery-hp",
+          "title": "H&P \u2014 patient-jordan-avery"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-jordan-avery-ed-triage",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "34111-5",
+          "display": "Emergency department note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-jordan-avery"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-head-ct"
+        }
+      ]
+    },
+    "date": "2026-05-04T18:32:00Z",
+    "description": "ED Note \u2014 patient-jordan-avery",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-jordan-avery-ed-triage",
+          "title": "ED Note \u2014 patient-jordan-avery"
+        }
+      }
+    ]
+  }
+]

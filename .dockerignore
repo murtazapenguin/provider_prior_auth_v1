@@ -1,0 +1,39 @@
+# Build-context excludes for the AI-sidecar image (services/ai/Dockerfile).
+# The build only needs: services/  +  penguinai-claude-artifacts-main/packages/.
+# Everything else is kept out so the context stays small and the build fast.
+
+node_modules
+.next
+.git
+.venv
+**/.venv
+**/__pycache__
+**/.pytest_cache
+.pytest_cache
+
+# Heavy reference data — used for DB seeding (run from a laptop), not at runtime.
+UHC
+CMS
+ICD-10 – Full Code Set
+CPT Codes
+prisma
+policies
+public
+demo-uploads
+data
+
+# Penguin artifacts — only the wheel under packages/ is needed.
+penguinai-claude-artifacts-main/data-labelling-library
+penguinai-claude-artifacts-main/platform-backend-kit
+penguinai-claude-artifacts-main/.claude
+
+# Sidecar dev-only files
+services/ai/tests
+services/ai/evals
+services/ai/.env
+
+# Docs + local artifacts
+*.md
+.env*
+.DS_Store
+tsconfig.tsbuildinfo

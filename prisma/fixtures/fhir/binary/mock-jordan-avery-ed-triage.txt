@@ -1,0 +1,35 @@
+EMERGENCY DEPARTMENT TRIAGE NOTE
+
+Patient: Jordan Avery | DOB: 1968-03-12 | Sex: F | MRN: EHR-JA-001
+Date: 2026-05-04 18:32 | ED Provider: Dr. Marcus Lee, MD
+Triage Acuity (ESI): Level 2 — Emergent
+
+CHIEF COMPLAINT
+"Worst headache of my life" — sudden onset, started ~3 hours before arrival.
+
+HPI
+58-year-old female presents to the ED via private vehicle with sudden-onset severe headache that reached maximal intensity within seconds while seated at her desk. Patient describes the pain as "a thunderclap, like being hit on the back of the head." Pain intensity 10/10 at onset, currently 8/10. Associated photophobia, mild phonophobia, and one episode of nausea without vomiting. No focal weakness, no visual changes, no neck stiffness, no fever. Patient denies head trauma, recent infection, or anticoagulant use. No prior similar headaches; no migraine history.
+
+VITALS
+BP 152/94 | HR 88 | RR 16 | Temp 98.6F | SpO2 99% on RA
+
+EXAM (FOCUSED)
+General: Alert, anxious, mildly diaphoretic.
+Neuro: GCS 15. Cranial nerves II-XII grossly intact. Motor 5/5 throughout. Sensation intact. Gait not tested due to pain. Romberg deferred.
+Neck: No nuchal rigidity. Kernig and Brudzinski negative.
+HEENT: Pupils equal and reactive. Fundoscopy without papilledema.
+
+ASSESSMENT
+Acute thunderclap headache, etiology to be determined. Differential includes subarachnoid hemorrhage, primary thunderclap headache, RCVS, cervical artery dissection. Red-flag presentation; warrants urgent neuroimaging.
+
+PLAN
+1. Stat non-contrast CT head — high priority to rule out SAH (CPT 70450).
+2. CBC, BMP, coags drawn.
+3. IV access established. IV fluids initiated.
+4. PCP (Dr. Sarah Chen) notified for outpatient follow-up.
+5. Patient counseled on findings and next steps.
+
+Disposition pending CT results.
+
+Signed: Dr. Marcus Lee, MD | Emergency Medicine
+2026-05-04 18:45

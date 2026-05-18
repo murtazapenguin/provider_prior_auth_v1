@@ -1,0 +1,53 @@
+{
+  "id": "policy-uhc-botox-chronic-migraine",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-BOTOX-CS",
+  "title": "Botulinum Toxins A and B — UHC Medical Policy (Chronic Migraine Prophylaxis)",
+  "effectiveFrom": "2025-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/botulinum-toxins-a-and-b-cs.pdf",
+  "sourceText": "Extracted from UHC medical policy document: botulinum-toxins-a-and-b-cs.pdf. Criteria reflect actual UHC coverage requirements for onabotulinumtoxinA (J0585) for chronic migraine prophylaxis.",
+  "codes": [
+    {
+      "id": "pcode-j0585",
+      "codeType": "HCPCS",
+      "code": "J0585",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-botox-1",
+      "ordinal": 1,
+      "text": "Diagnosis of chronic migraine defined by ALL of: ≥15 headache days/month, ≥8 migraine days/month, headaches last ≥4 hours/day",
+      "evidenceHint": "Look for explicit headache frequency (days/month), migraine-quality day count, and headache duration documentation in neurology notes or headache diary entries.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-botox-2",
+      "ordinal": 2,
+      "text": "History of failure (after a trial of at least two months), contraindication, or intolerance to prophylactic therapy with one agent from two of the following classes: Antidepressant (amitriptyline, venlafaxine), Antiepileptic (divalproex, topiramate), Beta blocker (atenolol, propranolol, nadolol, timolol, metoprolol)",
+      "evidenceHint": "Look for documented trials of at least two agents from two distinct drug classes listed in the policy, each with a trial duration of at least two months OR documented contraindication/intolerance. Note the policy requires only TWO classes — verify which classes are represented by each documented agent.",
+      "uploadHint": "Upload a physician addendum or prior treatment summary documenting: (1) drug name and class for each trial, (2) start and end dates confirming ≥2 months per trial, and (3) reason for discontinuation (failure, intolerance, or contraindication). A pharmacy medication history printout also satisfies this requirement.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-botox-3",
+      "ordinal": 3,
+      "text": "Botox dose does not exceed 155 units administered intramuscularly divided over 31 injection sites across 7 head and neck muscles every 12 weeks",
+      "evidenceHint": "Look for an explicit dosing statement in the plan or order section specifying total units, number of injection sites, and administration interval. Must match 155 units / 31 sites / every 12 weeks.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

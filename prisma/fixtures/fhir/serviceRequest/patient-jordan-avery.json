@@ -1,0 +1,34 @@
+[
+  {
+    "resourceType": "ServiceRequest",
+    "id": "sr-headct-jordan-1",
+    "meta": { "versionId": "1" },
+    "status": "active",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          { "system": "http://snomed.info/sct", "code": "363679005", "display": "Imaging" }
+        ]
+      }
+    ],
+    "code": {
+      "text": "CT head/brain without contrast",
+      "coding": [
+        { "system": "http://www.ama-assn.org/go/cpt", "code": "70450", "display": "CT head/brain without contrast" }
+      ]
+    },
+    "subject": { "reference": "Patient/patient-jordan-avery" },
+    "encounter": { "reference": "Encounter/encounter-head-ct" },
+    "authoredOn": "2026-05-05T09:30:00Z",
+    "requester": { "reference": "Practitioner/provider-pcp-sarah-chen", "display": "Sarah Chen, MD" },
+    "reasonCode": [
+      {
+        "text": "New-onset severe headache, suspected SAH",
+        "coding": [
+          { "system": "http://hl7.org/fhir/sid/icd-10-cm", "code": "R51.9", "display": "Headache, unspecified" }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "id": "policy-uhc-stelara-crohns",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-USTEKINUMAB-CROHNS",
+  "title": "Ustekinumab (Stelara) — UHC Medical Policy (Moderate-to-Severe Crohn's Disease)",
+  "effectiveFrom": "2025-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/stelara-ustekinumab-cs.pdf",
+  "sourceText": "Coverage criteria for ustekinumab (Stelara) in moderate-to-severe Crohn's disease. Covers IV induction (J3358) and SC maintenance (J3357) per FDA-approved indication.",
+  "codes": [
+    {
+      "id": "pcode-j3358",
+      "codeType": "HCPCS",
+      "code": "J3358",
+      "modifier": null,
+      "posCodes": []
+    },
+    {
+      "id": "pcode-j3357",
+      "codeType": "HCPCS",
+      "code": "J3357",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-stelara-1",
+      "ordinal": 1,
+      "text": "Diagnosis of moderate-to-severe Crohn's disease confirmed by endoscopy and/or imaging with histopathology consistent with Crohn's disease",
+      "evidenceHint": "Look for documented diagnosis of Crohn's disease with ICD-10 K50.x codes, plus a colonoscopy/ileoscopy report describing characteristic findings (skip lesions, aphthous or linear ulcers, terminal ileum involvement) and/or pathology confirming non-caseating granulomas or chronic active inflammation consistent with CD.",
+      "uploadHint": "Upload the colonoscopy report and pathology report establishing the diagnosis of Crohn's disease.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-stelara-2",
+      "ordinal": 2,
+      "text": "Documented inadequate response, loss of response, or intolerance to at least one preferred conventional therapy (corticosteroids, immunomodulators) AND at least one TNF-alpha inhibitor (adalimumab, infliximab, certolizumab) — step therapy requirement",
+      "evidenceHint": "Look for explicit documentation of trials of named agents with start/end dates, doses, and outcome (failure / loss of response / intolerance / contraindication). Both steps must be satisfied: (a) conventional therapy and (b) TNF inhibitor.",
+      "uploadHint": "Upload a medication and treatment history document listing each prior agent, the dose and duration, and the documented reason for discontinuation (failure, loss of response, intolerance, or contraindication).",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-stelara-3",
+      "ordinal": 3,
+      "text": "Active disease evidenced by clinical symptoms (e.g. abdominal pain, diarrhea, weight loss) and/or objective markers (elevated CRP, fecal calprotectin, or active findings on imaging/endoscopy) at the time of request",
+      "evidenceHint": "Look for current symptoms documented in a recent (within 90 days) progress note, plus any objective evidence of active inflammation: elevated CRP/ESR, fecal calprotectin, or imaging/scope findings showing ongoing disease activity.",
+      "uploadHint": "Upload a recent GI progress note or lab report documenting active disease (symptoms + objective inflammatory markers).",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-stelara-4",
+      "ordinal": 4,
+      "text": "Prescribing provider is a gastroenterologist or in consultation with a gastroenterologist",
+      "evidenceHint": "Look for the ordering or attesting physician's specialty in the request form, letter of medical necessity, or progress note header. Specialty 'Gastroenterology' explicitly stated, or co-signature from a gastroenterologist.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

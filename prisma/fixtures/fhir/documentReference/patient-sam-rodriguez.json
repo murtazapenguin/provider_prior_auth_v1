@@ -1,0 +1,78 @@
+[
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-sam-rodriguez-ortho-consult",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "11488-4",
+          "display": "Consult note"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-sam-rodriguez"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-knee-mri"
+        }
+      ]
+    },
+    "date": "2026-05-05T10:45:00Z",
+    "description": "Consult \u2014 patient-sam-rodriguez",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-sam-rodriguez-ortho-consult",
+          "title": "Consult \u2014 patient-sam-rodriguez"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "DocumentReference",
+    "id": "docref-sam-rodriguez-pt-discharge",
+    "meta": {
+      "versionId": "1"
+    },
+    "status": "current",
+    "type": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18761-7",
+          "display": "Provider-unspecified Transfer summary"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/patient-sam-rodriguez"
+    },
+    "context": {
+      "encounter": [
+        {
+          "reference": "Encounter/encounter-knee-mri"
+        }
+      ]
+    },
+    "date": "2026-04-22T15:30:00Z",
+    "description": "PT Discharge Summary \u2014 patient-sam-rodriguez",
+    "content": [
+      {
+        "attachment": {
+          "contentType": "text/plain",
+          "url": "Binary/mock-sam-rodriguez-pt-discharge",
+          "title": "PT Discharge Summary \u2014 patient-sam-rodriguez"
+        }
+      }
+    ]
+  }
+]

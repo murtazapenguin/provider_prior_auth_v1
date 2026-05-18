@@ -1,0 +1,29 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 5,
+  "link": [
+    { "relation": "self", "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?_getpages=page2-token" },
+    { "relation": "next", "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?_getpages=page3-token" }
+  ],
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "page2-pat-c",
+        "name": [{ "use": "official", "family": "BetaC", "given": ["Third"] }],
+        "gender": "other",
+        "birthDate": "1992-03-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "page2-pat-d",
+        "name": [{ "use": "official", "family": "BetaD", "given": ["Fourth"] }],
+        "gender": "unknown",
+        "birthDate": "1993-04-04"
+      }
+    }
+  ]
+}

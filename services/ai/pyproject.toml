@@ -1,0 +1,42 @@
+[project]
+name = "pa-ai-service"
+version = "0.1.0"
+requires-python = ">=3.11"
+# RUNTIME BINARY: libreoffice (soffice) must be on PATH for the FHIR document
+# intake pipeline (services/ai/utils/document_normalize.py).  It's used
+# headless to convert RTF / HTML / CCDA payloads to PDF before OCR.
+#   Mac:    brew install --cask libreoffice
+#   Debian: apt-get install libreoffice
+# PDF passthrough + plain-text paths don't need it.
+dependencies = [
+  # Install torch first on Mac: pip install torch --index-url https://download.pytorch.org/whl/cpu
+  "penguin-ai-sdk[cpu] @ file:../../penguinai-claude-artifacts-main/packages/penguin_ai_sdk-0.2.0-py3-none-any.whl",
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "pydantic>=2.6",
+  "pydantic-settings>=2.0",
+  "pymupdf>=1.24",
+  "httpx>=0.27",
+  "loguru>=0.7",
+  "asyncpg>=0.29",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = []
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

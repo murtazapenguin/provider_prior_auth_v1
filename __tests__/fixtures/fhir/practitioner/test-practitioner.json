@@ -1,0 +1,28 @@
+{
+  "resourceType": "Practitioner",
+  "id": "eb4eA-AKqkc2HnRMtUMzgaw3",
+  "meta": { "versionId": "2" },
+  "identifier": [
+    { "system": "http://hl7.org/fhir/sid/us-npi", "value": "1234567893" }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Steven L. Brand, MD",
+      "family": "Brand",
+      "given": ["Steven", "L."],
+      "suffix": ["MD"]
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "text": "Doctor of Medicine",
+        "coding": [
+          { "system": "http://terminology.hl7.org/CodeSystem/v2-0360/2.7", "code": "MD", "display": "Doctor of Medicine" }
+        ]
+      }
+    }
+  ]
+}

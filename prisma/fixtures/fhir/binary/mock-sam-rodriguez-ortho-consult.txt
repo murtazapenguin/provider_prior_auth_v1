@@ -1,0 +1,93 @@
+ORTHOPEDIC CONSULTATION NOTE
+
+Patient: Sam Rodriguez | DOB: 1972-09-04 | Sex: M | MRN: EHR-SR-001
+Date: 2026-05-05 | Provider: Dr. James Patel, MD | Specialty: Orthopedic Surgery
+Place of Service: Office (POS 11)
+
+---
+
+CHIEF COMPLAINT
+Right knee pain for 4 months, worsening, not responding to treatment.
+
+---
+
+HISTORY OF PRESENT ILLNESS
+Mr. Sam Rodriguez is a 53-year-old male presenting with a 4-month history of right knee pain. He describes the pain as aching and sharp with certain movements, particularly with twisting, squatting, and ascending stairs. He reports a popping sensation in the right knee that began approximately 4 months ago during a recreational soccer game. Since that time, he has had persistent pain along the medial joint line, intermittent swelling, and occasional locking/clicking sensations with knee flexion.
+
+Pain severity: 6/10 at baseline, up to 9/10 with provocative activities. Worse with pivoting and prolonged walking. The patient reports that conservative measures have been tried per his primary care physician's recommendation; however, despite these efforts, he has not experienced meaningful improvement in pain or function, and his symptoms have progressively worsened. He has been unable to return to his usual recreational activities.
+
+Note: The patient verbally reports that conservative measures failed per patient report. Formal physical therapy records were not available for review at today's visit. The patient reports participating in approximately 6-8 weeks of home exercise program and NSAID therapy as directed by his PCP.
+
+No history of prior knee surgery. No prior knee injections. No locking requiring manipulation. BMI 27.
+
+---
+
+PAST MEDICAL HISTORY
+- Mild hypertension (on low-dose HCTZ)
+- No prior musculoskeletal surgeries
+- No bleeding disorders
+
+MEDICATIONS
+- Hydrochlorothiazide 12.5 mg daily
+- Ibuprofen 600 mg TID PRN knee pain (per PCP instructions)
+- Naproxen 500 mg BID PRN (previously prescribed, patient reports limited benefit)
+
+ALLERGIES
+- NKDA
+
+SOCIAL HISTORY
+- Married, works in IT
+- Recreational soccer player (unable to play for 4 months due to knee)
+- Non-smoker, social alcohol
+
+FAMILY HISTORY
+- Mother: osteoarthritis
+- Father: diabetes type 2
+
+REVIEW OF SYSTEMS
+- Positive: right knee pain, swelling, mechanical clicking/locking sensation, functional limitation
+- Negative: fever, constitutional symptoms, bilateral joint complaints, back pain radiating to leg, hip pain
+
+---
+
+PHYSICAL EXAMINATION
+
+Vital Signs: BP 130/82 mmHg, HR 74 bpm, Weight 185 lbs, Height 5'10"
+
+General: Alert, well-appearing male. Mild antalgic gait favoring the right lower extremity.
+
+Right Knee Examination:
+- Inspection: Mild effusion present. No ecchymosis or erythema.
+- Palpation: Tenderness to palpation along the medial joint line. Medial collateral ligament area mildly tender. No lateral joint line tenderness.
+- Range of Motion: Flexion 0-125 degrees (limited by pain at end range). Extension 0 degrees.
+- McMurray Test: Positive — pain and click with valgus stress and external tibial rotation (suggestive of medial meniscal pathology).
+- Apley's Compression Test: Positive with internal rotation.
+- Lachman Test: Negative.
+- Anterior/Posterior Drawer: Negative.
+- Valgus/Varus Stress Test: Negative at 0 and 30 degrees.
+- Patellar Grind: Negative.
+- Ballottement: Mild fluid wave present.
+
+Left Knee: Unremarkable.
+
+Neurovascular: Distal pulses intact. Sensation intact. Motor 5/5 in bilateral lower extremities.
+
+---
+
+ASSESSMENT
+Suspected medial meniscal tear, right knee. Physical exam findings are consistent with internal derangement of the right knee — positive McMurray test, medial joint line tenderness, and mild effusion — in a patient with a mechanism consistent with meniscal injury (twisting injury during athletic activity). Conservative measures have failed per patient report, with ongoing functional limitation after 4 months of symptoms.
+
+Diagnosis: Internal derangement, right knee (M23.231 — Derangement of anterior horn of medial meniscus due to old tear or injury, right knee — working diagnosis pending MRI confirmation).
+
+---
+
+PLAN
+1. Order MRI right knee without contrast (CPT 73721) — for further evaluation of suspected medial meniscal tear and to rule out associated ligamentous or chondral pathology. Imaging will directly change clinical management: if MRI confirms meniscal tear, patient will be a candidate for arthroscopic meniscal repair vs. partial meniscectomy; if negative, conservative management will be intensified.
+2. Continue current anti-inflammatory regimen (naproxen 500 mg BID) while awaiting MRI results.
+3. Refer for formal physical therapy evaluation in parallel (pending imaging).
+4. Discuss surgical options with patient once MRI results reviewed.
+
+ICD-10 codes: M23.231 (Derangement of anterior horn of medial meniscus due to old tear or injury, right knee) — primary working diagnosis
+
+Signed: Dr. James Patel, MD | Orthopedic Surgery | NPI: 0987654321
+Date/Time: 2026-05-05 10:45

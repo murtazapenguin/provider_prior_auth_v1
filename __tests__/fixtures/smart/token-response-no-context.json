@@ -1,0 +1,8 @@
+{
+  "access_token": "epic-fake-access-token-standalone",
+  "token_type": "bearer",
+  "expires_in": 3600,
+  "scope": "openid fhirUser profile patient/Patient.read",
+  "refresh_token": "epic-fake-refresh-token-standalone",
+  "id_token": "PLACEHOLDER_SIGNED_AT_TEST_TIME"
+}

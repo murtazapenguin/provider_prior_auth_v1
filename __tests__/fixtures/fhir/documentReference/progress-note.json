@@ -1,0 +1,40 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "docref-progress-1",
+  "meta": { "versionId": "1" },
+  "status": "current",
+  "type": {
+    "text": "Progress note",
+    "coding": [{ "system": "http://loinc.org", "code": "11506-3", "display": "Progress note" }]
+  },
+  "category": [
+    {
+      "coding": [
+        { "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category", "code": "clinical-note" }
+      ]
+    }
+  ],
+  "subject": { "reference": "Patient/eq081-VQEgP8drUUqCWzHfw3" },
+  "date": "2024-03-15T13:30:00Z",
+  "author": [{ "reference": "Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3", "display": "Steven L. Brand, MD" }],
+  "description": "Office visit progress note",
+  "content": [
+    {
+      "attachment": {
+        "contentType": "application/pdf",
+        "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Binary/binary-progress-1",
+        "title": "Progress note 2024-03-15",
+        "size": 84211
+      },
+      "format": {
+        "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+        "code": "urn:ihe:iti:xds-sd:pdf:2008",
+        "display": "Embedded PDF"
+      }
+    }
+  ],
+  "context": {
+    "encounter": [{ "reference": "Encounter/eq081-encounter-1" }],
+    "period": { "start": "2024-03-15T12:30:00Z", "end": "2024-03-15T13:30:00Z" }
+  }
+}

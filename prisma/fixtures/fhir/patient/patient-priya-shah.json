@@ -1,0 +1,26 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-priya-shah",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-05-05T08:00:00Z"
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.0.1.7.5.737384.0",
+      "value": "EHR-PS-001"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Priya Shah",
+      "family": "Shah",
+      "given": ["Priya"]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1985-07-22"
+}

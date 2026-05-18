@@ -1,0 +1,11 @@
+{
+  "access_token": "epic-fake-access-token-camila-lopez",
+  "token_type": "bearer",
+  "expires_in": 3600,
+  "scope": "openid fhirUser profile offline_access patient/Patient.read patient/Encounter.read patient/Coverage.read patient/Practitioner.read patient/ServiceRequest.read patient/DocumentReference.read patient/Binary.read patient/Condition.read patient/Observation.read user/Practitioner.read launch",
+  "refresh_token": "epic-fake-refresh-token-camila-lopez",
+  "id_token": "PLACEHOLDER_SIGNED_AT_TEST_TIME",
+  "patient": "eq081-VQEgP8drUUqCWzHfw3",
+  "encounter": "eq081-encounter-1",
+  "fhirUser": "Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3"
+}

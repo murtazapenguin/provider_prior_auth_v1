@@ -1,0 +1,32 @@
+{
+  "resourceType": "Practitioner",
+  "id": "provider-pmr-robert-klein",
+  "meta": { "versionId": "1" },
+  "identifier": [
+    { "system": "http://hl7.org/fhir/sid/us-npi", "value": "3456789012" }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Robert Klein, MD",
+      "family": "Klein",
+      "given": ["Robert"],
+      "suffix": ["MD"]
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "text": "Physical Medicine & Rehabilitation",
+        "coding": [
+          {
+            "system": "http://nucc.org/provider-taxonomy",
+            "code": "208100000X",
+            "display": "Physical Medicine & Rehabilitation"
+          }
+        ]
+      }
+    }
+  ]
+}

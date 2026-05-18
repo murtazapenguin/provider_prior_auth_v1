@@ -1,0 +1,52 @@
+{
+  "id": "policy-uhc-evicore-head-ct",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-13.19-IMAGING",
+  "title": "UHC Choice Plus — CT of the Head/Brain (CPT 70450) Prior Authorization Criteria via eviCore",
+  "effectiveFrom": "2026-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/mri-ct-scan-site-of-service.pdf",
+  "sourceText": "UHC Commercial Medical Policy MP.13.19 (Effective 01/01/2026) — MRI and CT Scan. CPT 70450 is listed under covered Computed Tomography codes. Clinical necessity criteria for CT head/brain on UHC Choice Plus commercial plans are administered through eviCore Healthcare using ACR Appropriateness Criteria for Headache (2021 revision): new or changed headache pattern with red-flag features, documented neurological examination, and indication that imaging will change clinical management.",
+  "codes": [
+    {
+      "id": "pcode-70450",
+      "codeType": "CPT",
+      "code": "70450",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-head-ct-1",
+      "ordinal": 1,
+      "text": "New or worsening headache pattern with documented clinical characteristics (onset, quality, severity, associated symptoms)",
+      "evidenceHint": "Look for documentation of a new-onset or significantly changed headache presentation. Per ACR Appropriateness Criteria for Headache, the note should describe onset timeframe, quality (thunderclap, progressive, etc.), severity rating, and how it compares to any prior headache history.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-head-ct-2",
+      "ordinal": 2,
+      "text": "At least one red-flag feature documented: thunderclap onset, 'worst headache of life,' fever with meningismus, new neurological deficit, or headache in immunocompromised patient",
+      "evidenceHint": "Look for explicit documentation of any ACR/eviCore red-flag feature: sudden maximal-intensity onset (thunderclap), patient describing the headache as the worst ever, neck stiffness with fever, focal neurological deficits, visual changes, or known immunosuppression or cancer history.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-head-ct-3",
+      "ordinal": 3,
+      "text": "Neurological examination performed and documented prior to imaging order",
+      "evidenceHint": "Look for a documented neurological examination in the same clinical note or a recent prior note. Per eviCore imaging guidelines, a focused neuro exam (cranial nerves, motor, sensory, coordination, reflexes) must be documented before CT head PA is approved.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

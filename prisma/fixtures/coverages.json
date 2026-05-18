@@ -1,0 +1,50 @@
+[
+  {
+    "id": "coverage-jordan-avery-uhc",
+    "patientId": "patient-jordan-avery",
+    "payerId": "payer-uhc",
+    "planName": "Choice Plus",
+    "memberId": "UHC9JA00142",
+    "groupNumber": "GRP-00142",
+    "benefitCategory": "Medical",
+    "effectiveFrom": "2026-01-01T00:00:00.000Z",
+    "effectiveTo": null,
+    "isPrimary": true
+  },
+  {
+    "id": "coverage-sam-rodriguez-uhc",
+    "patientId": "patient-sam-rodriguez",
+    "payerId": "payer-uhc",
+    "planName": "Choice Plus",
+    "memberId": "UHC9SR00287",
+    "groupNumber": "GRP-00287",
+    "benefitCategory": "Medical",
+    "effectiveFrom": "2026-01-01T00:00:00.000Z",
+    "effectiveTo": null,
+    "isPrimary": true
+  },
+  {
+    "id": "coverage-priya-shah-uhc",
+    "patientId": "patient-priya-shah",
+    "payerId": "payer-uhc",
+    "planName": "Choice Plus",
+    "memberId": "UHC9PS00531",
+    "groupNumber": "GRP-00531",
+    "benefitCategory": "Medical",
+    "effectiveFrom": "2026-01-01T00:00:00.000Z",
+    "effectiveTo": null,
+    "isPrimary": true
+  },
+  {
+    "id": "coverage-eleanor-vance-uhc",
+    "patientId": "patient-eleanor-vance",
+    "payerId": "payer-uhc",
+    "planName": "Heritage Medicare Advantage HMO - Premier",
+    "memberId": "UHC9EV00713",
+    "groupNumber": "GRP-MA-00713",
+    "benefitCategory": "Medical",
+    "effectiveFrom": "2025-01-01T00:00:00.000Z",
+    "effectiveTo": null,
+    "isPrimary": true
+  }
+]

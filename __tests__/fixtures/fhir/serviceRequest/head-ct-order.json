@@ -1,0 +1,32 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "sr-headct-camila-1",
+  "meta": { "versionId": "1" },
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        { "system": "http://snomed.info/sct", "code": "363679005", "display": "Imaging" }
+      ]
+    }
+  ],
+  "code": {
+    "text": "CT head without contrast",
+    "coding": [
+      { "system": "http://www.ama-assn.org/go/cpt", "code": "70450", "display": "CT head without contrast" }
+    ]
+  },
+  "subject": { "reference": "Patient/eq081-VQEgP8drUUqCWzHfw3" },
+  "encounter": { "reference": "Encounter/eq081-encounter-1" },
+  "authoredOn": "2024-03-15T13:00:00Z",
+  "requester": { "reference": "Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3", "display": "Steven L. Brand, MD" },
+  "reasonCode": [
+    {
+      "text": "New onset headache, suspected SAH",
+      "coding": [
+        { "system": "http://hl7.org/fhir/sid/icd-10-cm", "code": "R51", "display": "Headache" }
+      ]
+    }
+  ]
+}

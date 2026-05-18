@@ -1,0 +1,19 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 5,
+  "link": [
+    { "relation": "self", "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?_getpages=page3-token" }
+  ],
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "page3-pat-e",
+        "name": [{ "use": "official", "family": "GammaE", "given": ["Fifth"] }],
+        "gender": "female",
+        "birthDate": "1994-05-05"
+      }
+    }
+  ]
+}

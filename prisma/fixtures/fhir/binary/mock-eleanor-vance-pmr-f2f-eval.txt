@@ -1,0 +1,110 @@
+MOUNTAIN VALLEY PM&R ASSOCIATES
+FACE-TO-FACE EVALUATION FOR POWER MOBILITY DEVICE
+
+Patient: Eleanor M. Vance | DOB: 1954-10-05 | Age: 71 | Sex: F | MRN: EHR-EV-001
+Date of Service: 2026-04-15 | Provider: Robert Klein, MD — Physical Medicine & Rehabilitation
+NPI: 3456789012
+Visit Type: New patient PM&R evaluation; CMS-required face-to-face for power mobility device (PMD)
+Time Spent: 60 minutes (>50% counseling and care coordination)
+
+---
+
+CHIEF COMPLAINT
+Progressive lower-extremity weakness and inability to self-propel her current manual wheelchair. Member needs evaluation for an upgraded mobility device to safely perform mobility-related activities of daily living (MRADLs) within her home.
+
+---
+
+HISTORY OF PRESENT ILLNESS
+Ms. Eleanor Vance is a 71-year-old widowed female with a 17-year history of relapsing-remitting multiple sclerosis (now in secondary-progressive phase, diagnosed 2009) who presents for a CMS face-to-face evaluation regarding power mobility device candidacy. She has been a manual wheelchair user since 2018 (Medicare-funded K0001 ultralight). Over the past 12-18 months she reports a progressive functional decline:
+
+- Increasing fatigue with self-propulsion; unable to sustain wheel propulsion for more than 15-20 feet without rest.
+- Worsening upper-extremity weakness (R > L); 4-/5 grip strength bilaterally.
+- Documented falls: two falls in the past 6 months — one with minor right wrist contusion (urgent care visit 02/03/2026), one without injury (03/12/2026).
+- Inability to safely transfer from wheelchair to toilet without assistance; daughter visits 3x/week to assist.
+- Bathing: requires shower-chair plus daughter's standby assistance.
+- Cannot independently access the kitchen to prepare meals — relies on Meals on Wheels 5 days/week.
+
+She lives alone in a single-family home in Asheville. Her daughter Margaret visits Mon/Wed/Fri to help with bathing, laundry, and meal prep. Without an adequate mobility device, the patient is at increasing risk of falls and is unable to perform routine MRADLs (bathing, dressing, toileting, meal preparation, mobility within the home) safely or independently.
+
+---
+
+PAST MEDICAL HISTORY
+- Multiple sclerosis (secondary progressive, dx 2009; baseline EDSS 7.0)
+- Hypertension, well-controlled on amlodipine 5 mg daily
+- Osteopenia (T-score -2.1 lumbar spine; supplemented with vitamin D + calcium)
+- Mild cognitive impairment (MoCA 26/30 — adequate cognition for safe PMD operation)
+- No history of dementia, seizure disorder, or visual impairment that would preclude safe PMD use
+
+MEDICATIONS
+- Ocrelizumab 600 mg IV q6 months (last dose 02/2026)
+- Baclofen 10 mg TID (spasticity)
+- Amlodipine 5 mg daily
+- Vitamin D3 2000 IU + calcium carbonate 600 mg daily
+- Acetaminophen 650 mg PRN
+
+ALLERGIES — NKDA
+
+SOCIAL HISTORY — Widowed; lives alone in single-family home with one external step (ramp present, threshold 2 inches). Daughter (Margaret) is primary caregiver. Non-smoker. No alcohol. Retired schoolteacher.
+
+---
+
+PHYSICAL EXAMINATION
+
+Vitals: BP 138/82, HR 78, BMI 24.1
+General: Alert, oriented x3. Pleasant, no distress at rest.
+MSK / Neuro:
+- Upper extremity strength: deltoid 4/5 b/l, biceps 4/5 b/l, triceps 4-/5 b/l, grip 4-/5 b/l (R slightly weaker than L).
+- Lower extremity strength: hip flexion 2/5 b/l, knee extension 2+/5 b/l, ankle dorsiflexion 1/5 b/l. Significant proximal and distal lower-extremity weakness.
+- Tone: increased lower-extremity tone, modified Ashworth 2 b/l hip adductors, knee flexors.
+- Sensation: decreased pinprick and proprioception in feet bilaterally; intact above the knees.
+- Reflexes: 3+ patellar and Achilles b/l; up-going plantars consistent with corticospinal involvement.
+- Coordination: dysmetria on finger-nose-finger b/l (R > L).
+- Cranial nerves: II-XII intact except bilateral mild internuclear ophthalmoplegia (chronic).
+
+Functional Mobility (in clinic):
+- Sit-to-stand: unable to perform without assistance.
+- Standing balance: unable to maintain unsupported standing.
+- Manual wheelchair self-propulsion: able to propel 8 feet on level tile before requiring rest; reports significant exertion.
+- Transfers: requires moderate assistance of one for wheelchair-to-mat-table.
+
+---
+
+MAE ALGORITHM (Mobility Assistive Equipment) — Step-by-step justification per CMS
+
+Step 1 — Cane or crutch: NOT FEASIBLE. Patient has b/l lower-extremity weakness (hip flexion 2/5, ankle dorsiflexion 1/5) and cannot bear weight independently. Cane/crutch alone cannot enable safe ambulation in the home.
+
+Step 2 — Walker: NOT FEASIBLE. Patient cannot stand independently. Walker requires intact lower-extremity weight-bearing capacity, which the patient does not have. Even with a rollator, balance and lower-extremity weakness preclude safe use within the home.
+
+Step 3 — Manual wheelchair: INADEQUATE. Patient currently uses a manual wheelchair (K0001, dispensed 2018). She demonstrates inability to self-propel sufficient distances within the home for MRADLs due to upper-extremity weakness and fatigue (4-/5 strength, unable to propel >20 feet without rest). She cannot independently complete bathing, toileting, or meal preparation tasks because she cannot get to the bathroom or kitchen reliably under her own power. Manual wheelchair use also creates a high fall risk during attempted transfers and propulsion.
+
+Step 4 — Power-operated vehicle (POV / scooter, K0800-K0812): NOT APPROPRIATE. POVs require the user to ambulate from the device to a chair, toilet, etc. The patient cannot safely transfer between a POV and other surfaces in her home. POVs are also poorly suited to navigating tight indoor spaces such as her bathroom doorway (28 inches).
+
+Step 5 — Power wheelchair Group 2 (K0820-K0843): INADEQUATE for this patient's needs. Group 2 PWCs lack the power-tilt feature that is medically necessary for this patient given her trunk weakness, pressure-ulcer risk (BMI 24, sedentary >18 hr/day), and need for repositioning to manage spasticity.
+
+Step 6 — Power wheelchair Group 3 with single power option (K0856) + power tilt (K0108): MEDICALLY NECESSARY. The patient requires a Group 3 PWC for the following reasons:
+  - Permanent neurological diagnosis (MS) consistent with CMS National Coverage Determination criteria for Group 3 PMD.
+  - Power tilt feature is medically necessary for pressure relief and trunk repositioning given her seated time and inability to weight-shift independently.
+  - Captain's chair seating (vs. rehab seating) is appropriate based on her current postural needs and ATP assessment.
+  - Patient demonstrates the cognitive and motor capacity to safely operate the device (MoCA 26/30, intact upper-extremity coordination sufficient for joystick control).
+
+---
+
+ASSESSMENT
+1. Multiple sclerosis, secondary progressive, with severe lower-extremity weakness and progressive functional decline (G35).
+2. Mobility limitation significantly impairing performance of mobility-related activities of daily living (MRADLs) within the home, NOT correctable by a lower-level mobility assistive device per CMS MAE pathway.
+3. Beneficiary is a candidate for a Group 3 power wheelchair with power tilt option per CMS Local Coverage Determination L33789 for power mobility devices.
+
+---
+
+PLAN
+1. Order Group 3 power wheelchair: HCPCS K0856 (Group 3 PWC, single power option, captain's chair) + K0108 (power tilt option). Length of need: lifetime.
+2. Standard Written Order issued today; 7-element prescription on file.
+3. Refer to ATP/SMS at Blue Ridge Mobility Solutions for completion of supplier evaluation including home accessibility assessment.
+4. PT functional mobility assessment co-signed for medical record.
+5. Patient and daughter counseled on equipment use, expectations, and timeline.
+6. Follow-up PM&R visit in 3 months post-delivery for fitting verification.
+
+Face-to-face encounter requirement met per 42 CFR 410.38(c)(2). Documentation date 04/15/2026 falls within the 6-month window prior to written order.
+
+Electronically signed: Robert Klein, MD | Physical Medicine & Rehabilitation | NPI 3456789012
+Date/Time: 2026-04-15 15:30 ET

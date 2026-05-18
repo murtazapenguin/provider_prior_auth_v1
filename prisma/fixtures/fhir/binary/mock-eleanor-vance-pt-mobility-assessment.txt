@@ -1,0 +1,43 @@
+MOUNTAIN VALLEY REHABILITATION SERVICES
+PHYSICAL THERAPY FUNCTIONAL MOBILITY ASSESSMENT (FMA)
+
+Patient: Eleanor M. Vance | DOB: 1954-10-05 | MRN: EHR-EV-001
+Date of Service: 2026-04-18 | PT: Olivia Carter, DPT, NCS — Neurologic Clinical Specialist
+Referring Provider: Robert Klein, MD (PM&R)
+Reason for Referral: Functional mobility assessment to support Group 3 power wheelchair PA
+
+---
+
+DIAGNOSIS / IMPAIRMENTS
+Multiple sclerosis (secondary progressive). Severe lower-extremity weakness, spasticity, and impaired endurance.
+
+STANDARDIZED OUTCOMES MEASURED
+- Berg Balance Scale: 4 / 56 (severe balance impairment; high fall risk; cutoff for high fall risk is <45).
+- Timed Up and Go (TUG): UNABLE TO PERFORM (cannot stand independently).
+- 6-Minute Walk Test: UNABLE TO PERFORM.
+- Manual wheelchair propulsion test (level tile, indoor): 12 feet sustained before fatigue (target for independent home mobility ≥150 feet); RPE 8/10 at termination; HR rose from 78 → 112 within 30 seconds.
+- Functional Reach: 4 inches (norms 12-16 inches; severely impaired).
+- Modified Functional Independence Measure (FIM) — locomotion: 1 (total dependence).
+
+ROOM-BY-ROOM IN-HOME MRADL SIMULATION (recreated using clinic mock-up + photos provided by patient/family):
+- Bedroom-to-bathroom (24 feet, level surface, one 30-inch doorway): patient unable to self-propel manual wheelchair the full distance without assistance. Requires 3-4 rest periods, total time 6+ minutes; not feasible for time-sensitive bathroom needs (incontinence risk).
+- Bedroom-to-kitchen (32 feet, level): unable to complete independently. Patient relies on daughter or skips meals.
+- Bathroom transfer: unable to safely transfer from manual wheelchair to commode without standby assist; high fall risk noted.
+
+UPPER-EXTREMITY ENDURANCE & STRENGTH
+- Shoulder flexion AROM: 0-110 degrees b/l (fatigue-limited).
+- Hand-grip dynamometry: R 12 lbs / L 14 lbs (norms for 71F: 38-46 lbs); 4-/5 functional grip.
+- Patient cannot sustain repetitive shoulder flexion needed for manual propulsion; demonstrates progressive grip weakening within 15 propulsion strokes.
+
+CONCLUSIONS / RECOMMENDATIONS
+1. Patient demonstrates inability to perform MRADLs (bathing, dressing, toileting, meal access) safely and timely with current manual wheelchair due to documented severe lower-extremity weakness, impaired upper-extremity endurance, and severe balance impairment.
+2. The MAE pathway has been systematically considered with the patient: cane/walker not feasible (cannot weight-bear); manual wheelchair inadequate as documented above; POV inappropriate (cannot safely transfer); Group 2 PWC inadequate (no power tilt for medically necessary repositioning).
+3. Group 3 PWC with power tilt (K0856 + K0108) is the LEAST RESTRICTIVE mobility device that will allow the patient to perform MRADLs in her home safely and independently.
+4. PT recommends home assessment by ATP for final supplier-side equipment selection, doorway/turning radius confirmation, and seating system specification.
+5. Patient retains cognitive and motor capacity to operate a power wheelchair safely (MoCA 26/30 per PM&R; demonstrated joystick familiarity in clinic).
+
+Functional mobility justification for Group 3 PWC with power tilt: SUPPORTED.
+
+Electronically signed: Olivia Carter, DPT, NCS
+License: PT-NC-22841
+Date: 2026-04-18 11:42 ET

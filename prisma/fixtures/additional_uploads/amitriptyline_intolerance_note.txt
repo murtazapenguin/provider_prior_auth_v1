@@ -1,0 +1,32 @@
+ADDENDUM — AMITRIPTYLINE TRIAL CLARIFICATION
+Prepared for prior authorization support purposes
+
+Patient: Priya Shah | DOB: 1985-07-22 | MRN: EHR-PS-001
+Date of Addendum: 2026-05-05
+Prepared by: Dr. Aisha Washington, MD | Neurology | NPI: 1122334455
+
+---
+
+RE: Amitriptyline Trial Duration and Discontinuation — Clarification for Prior Authorization
+
+This addendum addresses the amitriptyline trial documented in the neurology progress note dated 2026-05-05.
+
+CLARIFICATION:
+The amitriptyline 25 mg nightly trial conducted by the patient was 6 weeks in duration. This is below the typically recommended 2-month adequate trial threshold used by many payer policies as a criterion for demonstrating failure/intolerance of a preventive agent.
+
+IMPORTANT CLINICAL NOTE:
+The requirement for failure of preventive therapy from two distinct therapeutic classes is ALREADY SATISFIED by the documented trials of:
+1. Propranolol (beta blocker class) — 4-month trial, documented failure (symptomatic hypotension + worsening headache frequency). Duration 4 months exceeds the 2-month minimum threshold.
+2. Topiramate (antiepileptic class) — 3-month trial, documented failure (intolerable cognitive adverse effects). Duration 3 months exceeds the 2-month minimum threshold.
+
+The amitriptyline trial represents an additional (third) therapeutic class attempt that was abbreviated at 6 weeks due to moderate sedation intolerance. This abbreviated trial does NOT need to satisfy the two-class failure criterion, as that criterion is already satisfied by propranolol and topiramate (two distinct classes, each with adequate trial duration ≥2 months).
+
+The amitriptyline trial is documented for completeness and transparency. The moderate sedation experienced by the patient during the 6-week amitriptyline trial may constitute intolerance under some definitions, but this determination is not clinically necessary given that criterion 2 (failure from two preventive classes) is already met.
+
+SUMMARY:
+- Criterion 2 (failure of preventives from 2 of 3 specified classes) is satisfied by propranolol (beta blocker) and topiramate (antiepileptic).
+- Amitriptyline is a third class and is not required to satisfy criterion 2.
+- This addendum is provided to assist the payer's review in the event that the amitriptyline trial raises a question about the 6-week duration.
+
+Signed: Dr. Aisha Washington, MD | Neurology | NPI: 1122334455
+Date: 2026-05-05

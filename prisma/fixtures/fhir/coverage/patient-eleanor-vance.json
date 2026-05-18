@@ -1,0 +1,32 @@
+[
+  {
+    "resourceType": "Coverage",
+    "id": "coverage-eleanor-vance-uhc",
+    "meta": { "versionId": "1" },
+    "status": "active",
+    "type": {
+      "coding": [
+        { "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "HMO", "display": "Health Maintenance Organization" }
+      ]
+    },
+    "subscriberId": "UHC9EV00713",
+    "beneficiary": { "reference": "Patient/patient-eleanor-vance" },
+    "payor": [
+      { "display": "United Healthcare", "reference": "Organization/uhc-org-1" }
+    ],
+    "class": [
+      {
+        "type": { "coding": [{ "code": "group" }] },
+        "value": "GRP-MA-00713",
+        "name": "GRP-MA-00713"
+      },
+      {
+        "type": { "coding": [{ "code": "plan" }] },
+        "value": "HERITAGE-MA-PREMIER",
+        "name": "Heritage Medicare Advantage HMO - Premier"
+      }
+    ],
+    "identifier": [{ "system": "http://benefit.uhc.com/member-id", "value": "UHC9EV00713" }],
+    "period": { "start": "2025-01-01" }
+  }
+]

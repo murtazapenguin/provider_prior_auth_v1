@@ -1,0 +1,9 @@
+{
+  "iss": "https://fhir.epic.com/interconnect-fhir-oauth",
+  "sub": "Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3",
+  "aud": "test-client-id-fixture",
+  "exp": 9999999999,
+  "iat": 1700000000,
+  "fhirUser": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3",
+  "profile": "Practitioner/eb4eA-AKqkc2HnRMtUMzgaw3"
+}

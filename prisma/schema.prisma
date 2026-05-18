@@ -1,0 +1,306 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Patient + Encounter ─────────────────────────────────────────────────────
+
+model Patient {
+  id              String     @id @default(cuid())
+  externalId      String?    @unique
+  firstName       String
+  lastName        String
+  dob             DateTime
+  sex             String
+  coverages       Coverage[]
+  encounters      Encounter[]
+  createdAt       DateTime   @default(now())
+  fhirResourceId  String?
+  fhirVersionId   String?
+  lastFetchedAt   DateTime?
+}
+
+model Coverage {
+  id              String    @id @default(cuid())
+  patientId       String
+  patient         Patient   @relation(fields: [patientId], references: [id])
+  payerId         String
+  payer           Payer     @relation(fields: [payerId], references: [id])
+  planName        String
+  memberId        String
+  groupNumber     String?
+  benefitCategory String
+  effectiveFrom   DateTime
+  effectiveTo     DateTime?
+  isPrimary       Boolean   @default(true)
+  fhirResourceId  String?
+  fhirVersionId   String?
+  lastFetchedAt   DateTime?
+}
+
+model Encounter {
+  id             String         @id @default(cuid())
+  patientId      String
+  patient        Patient        @relation(fields: [patientId], references: [id])
+  providerId     String
+  provider       Provider       @relation(fields: [providerId], references: [id])
+  encounterDate  DateTime
+  placeOfService String
+  notes          CachedDocumentReference[]
+  priorAuths     PriorAuth[]
+  fhirResourceId String?
+  fhirVersionId  String?
+  lastFetchedAt  DateTime?
+}
+
+model CachedDocumentReference {
+  id              String    @id @default(cuid())
+  encounterId     String
+  encounter       Encounter @relation(fields: [encounterId], references: [id])
+  noteType        String
+  authoredAt      DateTime
+  authorRole      String
+  text            String
+  source          String
+  fhirResourceId  String?
+  fhirVersionId   String?
+  fhirContentType String?
+  pdfUrl          String?
+  pageImages      Json?
+  ocrLineCount    Int?
+  lastFetchedAt   DateTime?
+  kind            String    @default("clinical_note")
+
+  @@map("ClinicalNote")
+}
+
+model Provider {
+  id             String      @id @default(cuid())
+  npi            String      @unique
+  firstName      String
+  lastName       String
+  specialty      String
+  encounters     Encounter[]
+  priorAuths     PriorAuth[]
+  fhirResourceId String?
+  fhirVersionId  String?
+  lastFetchedAt  DateTime?
+}
+
+// ─── Payer + Policies ────────────────────────────────────────────────────────
+
+model Payer {
+  id         String     @id @default(cuid())
+  name       String     @unique
+  shortCode  String     @unique
+  policies   Policy[]
+  coverages  Coverage[]
+  priorAuths PriorAuth[]
+}
+
+model Policy {
+  id              String            @id @default(cuid())
+  payerId         String
+  payer           Payer             @relation(fields: [payerId], references: [id])
+  policyType      String
+  externalId      String?
+  title           String
+  effectiveFrom   DateTime
+  effectiveTo     DateTime?
+  sourceUrl       String?
+  sourceText      String?
+  pageImages      Json?             // pdfviewer-data shape: {files,presigned_urls}; null for hand-curated policies
+  applicableCodes PolicyCode[]
+  criteria        PolicyCriterion[]
+  publishStatus   String            @default("draft")  // draft | published | retired
+  publishedAt     DateTime?
+  publishedBy     String?
+  policyVersion   String?
+}
+
+model PolicyCode {
+  id       String  @id @default(cuid())
+  policyId String
+  policy   Policy  @relation(fields: [policyId], references: [id])
+  codeType String
+  code     String
+  modifier String?
+  posCodes String[]
+
+  @@index([code, codeType])
+}
+
+model PolicyCriterion {
+  id                String            @id @default(cuid())
+  policyId          String
+  policy            Policy            @relation(fields: [policyId], references: [id])
+  ordinal           Int
+  text              String
+  evidenceHint      String?
+  uploadHint        String?
+  requiredCodes     String[]
+  group             String?
+  groupOperator     String?
+  sourceBboxes      Json?
+  sourceLineNumbers Int[]
+  results           CriterionResult[]
+}
+
+// ─── Prior Auth + State ───────────────────────────────────────────────────────
+
+model PriorAuth {
+  id                           String            @id @default(cuid())
+  encounterId                  String
+  encounter                    Encounter         @relation(fields: [encounterId], references: [id])
+  providerId                   String
+  provider                     Provider          @relation(fields: [providerId], references: [id])
+  payerId                      String
+  payer                        Payer             @relation(fields: [payerId], references: [id])
+  status                       String
+  statusReason                 String?
+  priority                     String            @default("standard")
+  priorityRationale            String?
+  trackingId                   String?
+  submittedAt                  DateTime?
+  pendingSubmissionExpiresAt   DateTime?
+  payerExpiresAt               DateTime?
+  simulatorNextTransitionAt    DateTime?
+  fhirServiceRequestId         String?
+  codes                        PriorAuthCode[]
+  criteriaResults              CriterionResult[]
+  attachments                  Attachment[]
+  events                       PaEvent[]
+  createdAt                    DateTime          @default(now())
+  updatedAt                    DateTime          @updatedAt
+
+  @@index([status])
+}
+
+model PriorAuthCode {
+  id          String    @id @default(cuid())
+  priorAuthId String
+  priorAuth   PriorAuth @relation(fields: [priorAuthId], references: [id])
+  codeType    String
+  code        String
+  modifier    String?
+  description String
+  isPrimary   Boolean
+  derivedBy   String
+  confidence  Float?
+}
+
+model CriterionResult {
+  id          String          @id @default(cuid())
+  priorAuthId String
+  priorAuth   PriorAuth       @relation(fields: [priorAuthId], references: [id])
+  criterionId String
+  criterion   PolicyCriterion @relation(fields: [criterionId], references: [id])
+  status      String
+  rationale   String?
+  confidence  Float?
+  citations   Citation[]
+  evaluatedAt DateTime        @default(now())
+}
+
+model Citation {
+  id                String          @id @default(cuid())
+  criterionResultId String
+  criterionResult   CriterionResult @relation(fields: [criterionResultId], references: [id])
+  sourceType        String
+  sourceId          String
+  supportingTexts   String[]
+  reasoning         String?
+  confidence        Float
+  bboxes            Json
+  lineNumbers       Int[]
+}
+
+model Attachment {
+  id            String    @id @default(cuid())
+  priorAuthId   String
+  priorAuth     PriorAuth @relation(fields: [priorAuthId], references: [id])
+  filename      String
+  mimeType      String
+  storageUrl    String
+  uploadedBy    String
+  uploadedAt    DateTime  @default(now())
+  extractedText String?
+  kind          String    @default("upload")
+
+  @@index([priorAuthId, kind, uploadedAt])
+}
+
+model PaEvent {
+  id          String    @id @default(cuid())
+  priorAuthId String
+  priorAuth   PriorAuth @relation(fields: [priorAuthId], references: [id])
+  type        String
+  fromStatus  String?
+  toStatus    String?
+  actor       String
+  metadata    Json
+  createdAt   DateTime  @default(now())
+
+  @@index([priorAuthId, createdAt])
+}
+
+// ─── Reference Data ──────────────────────────────────────────────────────────
+
+model CodeReference {
+  id            String    @id @default(cuid())
+  codeType      String
+  code          String
+  description   String
+  category      String?
+  effectiveFrom DateTime?
+  effectiveTo   DateTime?
+
+  @@unique([codeType, code])
+}
+
+// ─── AI Cache ────────────────────────────────────────────────────────────────
+
+model AiCallCache {
+  id            String   @id @default(cuid())
+  task          String
+  promptVersion String
+  model         String
+  inputHash     String
+  responseJson  Json
+  tracedTo      String?
+  createdAt     DateTime @default(now())
+
+  @@unique([task, promptVersion, model, inputHash])
+}
+
+// ─── Auth — SMART on FHIR session ────────────────────────────────────────────
+
+model SmartSession {
+  id               String    @id @default(cuid())
+  sessionToken     String    @unique
+  iss              String
+  accessTokenEnc   String
+  refreshTokenEnc  String?
+  idTokenEnc       String?
+  expiresAt        DateTime
+  fhirUser         String
+  patientContext   String?
+  encounterContext String?
+  scope            String
+  createdAt        DateTime  @default(now())
+  lastUsedAt       DateTime  @default(now())
+  revokedAt        DateTime?
+
+  @@index([fhirUser, revokedAt])
+}
+
+// ─── Bootstrap ───────────────────────────────────────────────────────────────
+
+model Healthcheck {
+  id String   @id @default(cuid())
+  ts DateTime @default(now())
+}

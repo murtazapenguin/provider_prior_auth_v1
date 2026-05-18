@@ -1,0 +1,25 @@
+{
+  "resourceType": "Observation",
+  "id": "obs-bp-systolic-1",
+  "meta": { "versionId": "1" },
+  "status": "final",
+  "category": [
+    {
+      "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs", "display": "Vital Signs" }]
+    }
+  ],
+  "code": {
+    "text": "Systolic blood pressure",
+    "coding": [{ "system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure" }]
+  },
+  "subject": { "reference": "Patient/eq081-VQEgP8drUUqCWzHfw3" },
+  "encounter": { "reference": "Encounter/eq081-encounter-1" },
+  "effectiveDateTime": "2024-03-15T12:35:00Z",
+  "issued": "2024-03-15T12:36:00Z",
+  "valueQuantity": {
+    "value": 128,
+    "unit": "mmHg",
+    "system": "http://unitsofmeasure.org",
+    "code": "mm[Hg]"
+  }
+}

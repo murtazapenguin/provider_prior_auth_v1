@@ -1,0 +1,76 @@
+{
+  "id": "policy-uhc-iop-behavioral-health",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-IOP-MENTAL-HEALTH",
+  "title": "Mental Health Intensive Outpatient Program (IOP) — UHC Medical Policy",
+  "effectiveFrom": "2025-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/intensive-outpatient-mental-health-cs.pdf",
+  "sourceText": "Coverage criteria for adult mental health Intensive Outpatient Program (IOP), HCPCS S9480, billed per diem with revenue code 0905. Initial authorization period is typically 4 weeks (12 sessions).",
+  "codes": [
+    {
+      "id": "pcode-s9480",
+      "codeType": "HCPCS",
+      "code": "S9480",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-iop-1",
+      "ordinal": 1,
+      "text": "Active DSM-5 diagnosis of a primary psychiatric disorder (e.g. major depressive disorder, generalized anxiety disorder, bipolar disorder, PTSD) documented by a licensed psychiatric provider",
+      "evidenceHint": "Look for an explicit DSM-5 diagnosis with ICD-10 code (F-codes) in a recent psychiatric evaluation or progress note, signed by a psychiatrist, psychiatric NP, or licensed psychologist.",
+      "uploadHint": "Upload the most recent psychiatric evaluation note from a licensed mental health provider documenting the DSM-5 diagnosis.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-iop-2",
+      "ordinal": 2,
+      "text": "Inadequate response, lack of clinical progress, or clinical deterioration at a lower level of care (routine outpatient therapy and/or psychiatric medication management), OR step-down from inpatient hospitalization, partial hospitalization, or crisis stabilization",
+      "evidenceHint": "Look for explicit statements documenting why outpatient care is insufficient — e.g. failed outpatient trial with named therapy/medication, recent ED visit for psychiatric crisis, recent inpatient or PHP stay, or crisis stabilization step-down.",
+      "uploadHint": "Upload an ED discharge summary or inpatient/PHP discharge summary, or a treating-clinician note explaining why routine outpatient care is insufficient.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-iop-3",
+      "ordinal": 3,
+      "text": "Documented severity of illness justifying IOP level of care, supported by a standardized assessment (e.g. PHQ-9 ≥ 15, GAD-7 ≥ 15, LOCUS Level 4, or equivalent) and/or recent suicidal/homicidal ideation requiring close clinical management",
+      "evidenceHint": "Look for scored standardized assessments (PHQ-9, GAD-7, LOCUS, CSSRS) with quantitative results in the moderate-severe / severe range, or explicit clinician documentation of active SI/HI requiring intensive monitoring.",
+      "uploadHint": "Upload a clinical assessments packet that includes the PHQ-9, GAD-7, LOCUS, and a current safety plan or risk assessment.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-iop-4",
+      "ordinal": 4,
+      "text": "Member is medically stable and able to participate in a structured outpatient program; does not require 24-hour psychiatric monitoring (i.e. inpatient or PHP)",
+      "evidenceHint": "Look for explicit clinician determination that the member is appropriate for IOP rather than inpatient/PHP — typically a sentence in the psychiatric evaluation or treatment plan stating the member is medically stable and can be safely managed in an outpatient structured setting.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-iop-5",
+      "ordinal": 5,
+      "text": "Individualized treatment plan signed by a licensed psychiatric provider that specifies measurable treatment goals, modalities (group therapy, individual therapy, medication management, family/skills training as applicable), program frequency (typically 9-12 hours per week across 3+ days), and the expected duration of the initial authorization (typically 4 weeks / 12 sessions)",
+      "evidenceHint": "Look for a written treatment plan document with: measurable goals, listed modalities, schedule (days/week × hours), and an explicit initial authorization duration.",
+      "uploadHint": "Upload the proposed IOP treatment plan signed by the program psychiatrist.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

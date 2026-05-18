@@ -1,0 +1,54 @@
+{
+  "id": "policy-uhc-evicore-knee-mri",
+  "payerId": "payer-uhc",
+  "policyType": "MedicalPolicy",
+  "externalId": "UHC-MP-13.19-IMAGING",
+  "title": "UHC Choice Plus — Outpatient MRI Knee (CPT 73721) Prior Authorization Criteria via eviCore",
+  "effectiveFrom": "2026-01-01T00:00:00.000Z",
+  "effectiveTo": null,
+  "sourceUrl": "UHC/medical-policies/mri-ct-scan-site-of-service.pdf",
+  "sourceText": "UHC Commercial Medical Policy MP.13.19 (Effective 01/01/2026) — MRI and CT Scan. CPT 73721 (MRI any joint of lower extremity without contrast) is listed under covered MRI codes. Clinical necessity criteria for outpatient knee MRI on UHC Choice Plus commercial plans are administered through eviCore Healthcare using ACR Appropriateness Criteria for Acute Trauma to the Knee (2021 revision) and standard musculoskeletal UM criteria: documented failure of ≥6 weeks of conservative therapy, physical examination findings consistent with internal derangement, and confirmation that imaging will directly change clinical management.",
+  "codes": [
+    {
+      "id": "pcode-73721",
+      "codeType": "CPT",
+      "code": "73721",
+      "modifier": null,
+      "posCodes": []
+    }
+  ],
+  "criteria": [
+    {
+      "id": "criterion-knee-mri-1",
+      "ordinal": 1,
+      "text": "Failure of conservative therapy for at least 6 weeks, including two or more of: physical therapy, NSAID/analgesic trial, activity modification",
+      "evidenceHint": "Look for documented duration of conservative treatment with start and end dates. Per eviCore musculoskeletal MRI criteria, the record must confirm ≥6 weeks of conservative management with at least two modalities (PT, NSAIDs, activity modification) and explicit documentation of inadequate improvement.",
+      "uploadHint": "Upload a physical therapy discharge summary or progress notes showing: (1) treatment start and end dates spanning ≥6 weeks, (2) specific PT exercises/modalities performed, (3) NSAID use with drug name and dose, and (4) a clinical outcome statement confirming inadequate improvement.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-knee-mri-2",
+      "ordinal": 2,
+      "text": "Physical examination findings consistent with internal derangement (positive meniscal or ligamentous provocation test, joint line tenderness, or mechanical symptoms)",
+      "evidenceHint": "Look for documented results of specific provocative tests. ACR criteria require at least one positive finding such as McMurray test, Lachman test, pivot shift, Apley's compression, anterior/posterior drawer, or joint-line tenderness. Mechanical symptoms (locking, clicking, giving way) also satisfy this criterion.",
+      "uploadHint": "If the physical exam was not documented in the current note, upload the orthopedic or sports medicine consultation note that documents the specific provocative tests performed and their results.",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    },
+    {
+      "id": "criterion-knee-mri-3",
+      "ordinal": 3,
+      "text": "MRI findings will directly change clinical management (e.g., determine operative vs. non-operative approach, identify specific lesion requiring intervention)",
+      "evidenceHint": "Look for an explicit plan statement that the MRI result will guide a specific treatment decision. Per eviCore guidelines, the ordering provider must document how the imaging result will alter management — e.g., 'MRI to determine if arthroscopic meniscal repair vs. continued conservative management is indicated.'",
+      "requiredCodes": [],
+      "group": null,
+      "groupOperator": null,
+      "sourceLineNumbers": []
+    }
+  ]
+}

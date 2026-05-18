@@ -1,0 +1,10 @@
+{
+  "resourceType": "Coverage",
+  "id": "eq081-coverage-nostatus",
+  "type": {
+    "coding": [{ "code": "PPO", "display": "Preferred Provider Organization" }]
+  },
+  "subscriberId": "UHC987654321",
+  "beneficiary": { "reference": "Patient/eq081-VQEgP8drUUqCWzHfw3" },
+  "payor": [{ "display": "UnitedHealthcare" }]
+}

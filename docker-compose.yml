@@ -1,0 +1,24 @@
+# Local development database.
+# docker compose up -d     — start
+# docker compose down      — stop (data preserved in postgres_data volume)
+# docker compose down -v   — nuke volumes (use pnpm db:seed --force to re-seed instead)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: pa_app
+      POSTGRES_PASSWORD: pa_app_dev
+      POSTGRES_DB: pa_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pa_app -d pa_app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

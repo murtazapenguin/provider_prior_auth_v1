@@ -1,0 +1,101 @@
+HISTORY & PHYSICAL
+
+Patient: Jordan Avery | DOB: 1968-03-12 | Sex: F | MRN: EHR-JA-001
+Date: 2026-05-05 | Provider: Dr. Sarah Chen, MD | Specialty: Internal Medicine
+Place of Service: Office (POS 11)
+
+---
+
+CHIEF COMPLAINT
+New-onset severe headache for 3 days.
+
+---
+
+HISTORY OF PRESENT ILLNESS
+Ms. Jordan Avery is a 58-year-old female presenting with a 3-day history of severe headache that began suddenly, described by the patient as "the worst headache of my life." The onset was thunderclap in quality — she reports the headache reached maximal intensity within seconds of onset while she was seated at her desk. No prior history of similar headache episodes. She denies any recent head trauma, fever, neck stiffness, or change in consciousness. She reports associated photophobia and mild phonophobia. No nausea or vomiting. No visual changes or focal neurological symptoms reported.
+
+The headache is bilateral, diffuse, rated 8/10 in severity at its peak, currently 5/10. She took over-the-counter acetaminophen 1,000 mg with minimal relief. No prior migraines. No family history of subarachnoid hemorrhage or intracranial aneurysm.
+
+Red flags documented: thunderclap onset (reaching maximal intensity in seconds), new worst-ever headache pattern, photophobia, no prior headache history, failure to respond to analgesics.
+
+---
+
+PAST MEDICAL HISTORY
+- Hypertension (well-controlled on lisinopril 10 mg daily)
+- Hyperlipidemia (on atorvastatin 20 mg daily)
+- No prior neurological diagnoses
+- No prior migraines
+
+MEDICATIONS
+- Lisinopril 10 mg daily
+- Atorvastatin 20 mg daily
+- Acetaminophen 1,000 mg PRN (taken for current complaint)
+
+ALLERGIES
+- NKDA
+
+SOCIAL HISTORY
+- Married, works as an accountant
+- Non-smoker, occasional alcohol (1-2 drinks/week)
+- Denies illicit drug use
+
+FAMILY HISTORY
+- Father: coronary artery disease
+- Mother: type 2 diabetes
+- No known family history of intracranial aneurysm or hemorrhagic stroke
+
+REVIEW OF SYSTEMS
+- Positive: severe headache, photophobia, phonophobia
+- Negative: fever, neck stiffness, nausea, vomiting, diplopia, tinnitus, syncope, seizure, focal weakness, sensory changes, speech difficulty
+
+---
+
+PHYSICAL EXAMINATION
+
+Vital Signs: BP 142/88 mmHg, HR 82 bpm, RR 16, Temp 37.1°C, SpO2 98% on room air
+
+General: Alert, oriented x3. Mild distress due to headache. No acute respiratory distress.
+
+HEENT: Normocephalic, atraumatic. Pupils equal, round, reactive to light (3mm bilaterally). Fundi not examined (photophobic). No papilledema on fundoscopic exam. Extraocular movements intact. No nystagmus.
+
+Neck: Supple. No meningismus. No lymphadenopathy. No carotid bruits.
+
+Neurological Examination:
+- Mental status: Alert and oriented to person, place, time. Speech fluent and coherent.
+- Cranial nerves: II-XII intact. Visual fields full to confrontation. Facial sensation symmetric. Facial motor function symmetric. Hearing grossly intact bilaterally.
+- Motor: 5/5 strength in bilateral upper and lower extremities. No pronator drift.
+- Sensation: Intact to light touch, pinprick, and proprioception in all four extremities.
+- Coordination: Finger-nose-finger and heel-shin intact bilaterally. No dysmetria.
+- Reflexes: 2+ biceps, triceps, brachioradialis, patellar, Achilles bilaterally. Plantar reflexes downgoing bilaterally.
+- Gait: Normal tandem gait. Romberg negative.
+
+Cardiovascular: Regular rate and rhythm. No murmurs.
+Respiratory: Clear to auscultation bilaterally.
+Abdomen: Soft, non-tender.
+
+---
+
+ASSESSMENT
+New-onset severe headache with thunderclap quality and red flag features in a 58-year-old female. The presentation of a "worst headache of life" with sudden onset, photophobia, and no prior similar episodes is concerning for subarachnoid hemorrhage (SAH) or other intracranial pathology until proven otherwise. The neurologic exam is currently intact, but this does not exclude an intracranial bleed in the early phase.
+
+Differential diagnosis:
+1. Subarachnoid hemorrhage (must rule out emergently)
+2. Intracranial hypertension
+3. Cerebral venous sinus thrombosis
+4. Thunderclap migraine (diagnosis of exclusion)
+5. Hypertensive emergency headache
+
+---
+
+PLAN
+1. Order CT scan of the head/brain without contrast (CPT 70450) — emergent imaging to evaluate for subarachnoid hemorrhage or other intracranial hemorrhage. Given thunderclap onset and new worst headache of life, CT head is indicated as the first-line diagnostic test per current guidelines.
+2. Labs: CBC, BMP, coagulation studies, ESR
+3. If CT negative and clinical suspicion remains, discuss lumbar puncture with patient for xanthochromia evaluation
+4. Neurology consultation ordered given red flag presentation
+5. Hold BP medications pending imaging results; treat if BP >180/120
+6. Patient instructed to remain in office pending imaging results
+
+ICD-10 codes: R51.9 (Headache, unspecified) — primary working diagnosis pending imaging
+
+Signed: Dr. Sarah Chen, MD | Internal Medicine | NPI: 1234567890
+Date/Time: 2026-05-05 09:30

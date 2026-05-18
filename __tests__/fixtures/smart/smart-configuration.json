@@ -1,0 +1,40 @@
+{
+  "authorization_endpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/authorize",
+  "token_endpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token",
+  "revocation_endpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/revoke",
+  "introspection_endpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/introspect",
+  "issuer": "https://fhir.epic.com/interconnect-fhir-oauth",
+  "jwks_uri": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/jwks",
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "offline_access",
+    "fhirUser",
+    "launch",
+    "launch/patient",
+    "patient/Patient.read",
+    "patient/Encounter.read",
+    "patient/Coverage.read",
+    "patient/Practitioner.read",
+    "patient/ServiceRequest.read",
+    "patient/DocumentReference.read",
+    "patient/Binary.read",
+    "patient/Condition.read",
+    "patient/Observation.read",
+    "user/Practitioner.read"
+  ],
+  "response_types_supported": ["code"],
+  "grant_types_supported": ["authorization_code", "refresh_token"],
+  "code_challenge_methods_supported": ["S256"],
+  "capabilities": [
+    "launch-ehr",
+    "launch-standalone",
+    "client-public",
+    "context-ehr-patient",
+    "context-ehr-encounter",
+    "context-standalone-patient",
+    "permission-patient",
+    "permission-user",
+    "permission-offline"
+  ]
+}

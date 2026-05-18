@@ -1,0 +1,32 @@
+[
+  {
+    "resourceType": "Coverage",
+    "id": "coverage-priya-shah-uhc",
+    "meta": { "versionId": "1" },
+    "status": "active",
+    "type": {
+      "coding": [
+        { "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "PPO", "display": "Preferred Provider Organization" }
+      ]
+    },
+    "subscriberId": "UHC9PS00531",
+    "beneficiary": { "reference": "Patient/patient-priya-shah" },
+    "payor": [
+      { "display": "United Healthcare", "reference": "Organization/uhc-org-1" }
+    ],
+    "class": [
+      {
+        "type": { "coding": [{ "code": "group" }] },
+        "value": "GRP-00531",
+        "name": "GRP-00531"
+      },
+      {
+        "type": { "coding": [{ "code": "plan" }] },
+        "value": "CHOICE-PLUS",
+        "name": "Choice Plus"
+      }
+    ],
+    "identifier": [{ "system": "http://benefit.uhc.com/member-id", "value": "UHC9PS00531" }],
+    "period": { "start": "2026-01-01" }
+  }
+]

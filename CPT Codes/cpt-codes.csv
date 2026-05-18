@@ -1,0 +1,21 @@
+code,description,category,relative_value_units
+99213,Office or other outpatient visit - established patient low complexity,Evaluation & Management,0.97
+99214,Office or other outpatient visit - established patient moderate complexity,Evaluation & Management,1.50
+99215,Office or other outpatient visit - established patient high complexity,Evaluation & Management,2.11
+99232,Subsequent hospital care - moderate complexity,Evaluation & Management,1.39
+99233,Subsequent hospital care - high complexity,Evaluation & Management,2.00
+93000,Electrocardiogram routine with interpretation,Cardiology,0.17
+93306,Echo transthoracic with spectral and color flow Doppler,Cardiology,4.56
+71046,X-ray chest 2 views,Radiology,0.22
+80053,Comprehensive metabolic panel,Laboratory,0.00
+85025,Complete CBC with automated differential,Laboratory,0.00
+36415,Collection of venous blood by venipuncture,Laboratory,0.00
+90837,Psychotherapy 60 minutes,Behavioral Health,2.89
+90834,Psychotherapy 45 minutes,Behavioral Health,2.00
+97110,Therapeutic exercises,Physical Therapy,0.78
+97012,Traction mechanical,Physical Therapy,0.40
+27447,Total knee arthroplasty,Surgery,22.39
+29827,Arthroscopy shoulder surgical with rotator cuff repair,Surgery,15.48
+43239,Upper GI endoscopy biopsy,Gastroenterology,3.83
+45380,Colonoscopy with biopsy,Gastroenterology,4.17
+99385,Preventive visit new patient 18-39 years,Preventive,2.17

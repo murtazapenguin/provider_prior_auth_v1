@@ -1,0 +1,31 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 5,
+  "link": [
+    { "relation": "self", "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?identifier=mrn%7CZ6129&_count=2" },
+    { "relation": "next", "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?_getpages=page2-token" }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient/page1-pat-a",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "page1-pat-a",
+        "name": [{ "use": "official", "family": "AlphaA", "given": ["First"] }],
+        "gender": "female",
+        "birthDate": "1990-01-01"
+      }
+    },
+    {
+      "fullUrl": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient/page1-pat-b",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "page1-pat-b",
+        "name": [{ "use": "official", "family": "AlphaB", "given": ["Second"] }],
+        "gender": "male",
+        "birthDate": "1991-02-02"
+      }
+    }
+  ]
+}

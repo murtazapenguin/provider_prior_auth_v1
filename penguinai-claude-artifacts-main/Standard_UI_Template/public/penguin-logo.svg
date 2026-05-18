@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.91 79.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ae0d51;
+      }
+
+      .cls-2 {
+        fill: #ee016d;
+      }
+
+      .cls-3 {
+        fill: #ff6db1;
+      }
+
+      .cls-4 {
+        fill: #d10a5d;
+      }
+
+      .cls-5 {
+        fill: #a40a4c;
+      }
+
+      .cls-6 {
+        fill: #a8094b;
+      }
+
+      .cls-7 {
+        fill: #fe1284;
+      }
+
+      .cls-8 {
+        fill: #fed1e7;
+      }
+
+      .cls-9 {
+        fill: #fe2e92;
+      }
+
+      .cls-10 {
+        fill: #fed5ea;
+      }
+
+      .cls-11 {
+        fill: #c2015b;
+      }
+
+      .cls-12 {
+        fill: #fdcbe0;
+      }
+
+      .cls-13 {
+        fill: #b90a52;
+      }
+
+      .cls-14 {
+        fill: #fcf8fc;
+      }
+
+      .cls-15 {
+        fill: #fdbbd8;
+      }
+
+      .cls-16 {
+        fill: #b0094f;
+      }
+
+      .cls-17 {
+        fill: #fe017d;
+      }
+
+      .cls-18 {
+        fill: #a31a50;
+      }
+
+      .cls-19 {
+        fill: #fc85bb;
+      }
+
+      .cls-20 {
+        fill: #cd095b;
+      }
+
+      .cls-21 {
+        fill: #fcd8e9;
+      }
+
+      .cls-22 {
+        fill: #ff95c5;
+      }
+
+      .cls-23 {
+        fill: #fdcce3;
+      }
+
+      .cls-24 {
+        fill: #c80757;
+      }
+
+      .cls-25 {
+        fill: #fcb3d6;
+      }
+
+      .cls-26 {
+        fill: #fda6d1;
+      }
+
+      .cls-27 {
+        fill: #feadd0;
+      }
+
+      .cls-28 {
+        fill: #fd9ac9;
+      }
+
+      .cls-29 {
+        fill: #fd99c9;
+      }
+
+      .cls-30 {
+        fill: #fdb8d9;
+      }
+
+      .cls-31 {
+        fill: #fa4a9f;
+      }
+
+      .cls-32 {
+        fill: #fdb0d3;
+      }
+
+      .cls-33 {
+        fill: #fc88bb;
+      }
+
+      .cls-34 {
+        fill: #ff439d;
+      }
+
+      .cls-35 {
+        fill: #fdecf4;
+      }
+
+      .cls-36 {
+        fill: #fd459d;
+      }
+
+      .cls-37 {
+        fill: #b90653;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g>
+      <polygon class="cls-17" points="17.89 6.64 21.84 7.13 22.47 8.19 24.66 0 17.89 6.64"/>
+      <polygon class="cls-28" points="13.71 16.3 17.18 7.3 17.89 6.64 21.84 7.13 19.72 15.11 13.71 16.3"/>
+      <polygon class="cls-30" points="19.72 15.11 23.06 16.85 22.47 8.19 21.84 7.13 19.72 15.11"/>
+      <polygon class="cls-17" points="13.71 16.3 12.73 9.97 17.18 7.3 13.71 16.3"/>
+      <polygon class="cls-4" points="10.24 17.38 13.71 16.3 12.73 9.97 10.24 17.38"/>
+      <polygon class="cls-2" points="13.71 16.3 14.19 17.86 19.72 15.11 13.71 16.3"/>
+      <polygon class="cls-25" points="14.19 17.86 25.07 21.27 19.72 15.11 14.19 17.86"/>
+      <polygon class="cls-13" points="10.24 17.38 13.71 16.3 14.19 17.86 4.08 31.86 6.94 24.21 10.24 17.38"/>
+      <polygon class="cls-18" points="10.24 17.38 4.84 25.78 3.26 32.84 4.08 31.86 10.24 17.38"/>
+      <polygon class="cls-31" points="4.08 31.86 13.01 26.67 14.19 17.86 4.08 31.86"/>
+      <polygon class="cls-3" points="19.72 15.11 23.06 16.85 23.12 17.65 19.72 15.11"/>
+      <polygon class="cls-3" points="19.72 15.11 27.05 20.58 25.07 21.27 19.72 15.11"/>
+      <polygon class="cls-3" points="23.12 17.65 27.05 20.58 23.08 17.15 23.12 17.65"/>
+      <polygon class="cls-8" points="14.19 17.86 13.01 26.67 20.22 31.34 25.07 21.27 14.19 17.86"/>
+      <polygon class="cls-14" points="25.07 21.27 26.74 37.71 20.22 31.34 25.07 21.27"/>
+      <polygon class="cls-33" points="25.07 21.27 29.23 26.04 27.05 20.58 25.07 21.27"/>
+      <polygon class="cls-21" points="25.07 21.27 29.23 26.04 29.89 27.73 26.74 37.71 25.07 21.27"/>
+      <polygon class="cls-26" points="30.59 61.8 26.74 37.71 29.89 27.73 31.97 47.51 30.59 61.8"/>
+      <polygon class="cls-10" points="29.89 27.73 33.91 46.24 31.97 47.51 29.89 27.73"/>
+      <polyline class="cls-22" points="33.91 46.24 31.45 52.88 31.97 47.51"/>
+      <polygon class="cls-19" points="4.08 31.86 8.18 46.7 13.01 26.67 4.08 31.86"/>
+      <polygon class="cls-27" points="8.18 46.7 20.22 31.34 13.01 26.67 8.18 46.7"/>
+      <polygon class="cls-15" points="13.01 65.02 8.18 46.7 20.22 31.34 13.01 65.02"/>
+      <polygon class="cls-35" points="20.22 31.34 26.74 37.71 24.59 65.24 13.01 65.02 20.22 31.34"/>
+      <polygon class="cls-23" points="30.39 63.55 30.59 61.8 26.74 37.71 24.59 65.24 30.39 63.55"/>
+      <polygon class="cls-7" points="13.01 65.02 11.22 76.59 6.63 70.8 4.65 60.53 13.01 65.02"/>
+      <polygon class="cls-12" points="24.59 65.24 11.22 76.59 13.01 65.02 24.59 65.24"/>
+      <polygon class="cls-32" points="21.03 74.26 24.59 65.24 11.22 76.59 21.03 74.26"/>
+      <polygon class="cls-29" points="24.38 74.09 27.84 72.85 30.39 63.55 24.59 65.24 21.03 74.26 24.38 74.09"/>
+      <polygon class="cls-36" points="8.18 46.7 13.01 65.02 4.65 60.53 8.18 46.7"/>
+      <polygon class="cls-16" points="3.49 47.4 8.18 46.7 4.65 60.53 3.49 47.4"/>
+      <polygon class="cls-24" points="4.08 31.86 3.49 47.4 8.18 46.7 4.08 31.86"/>
+      <polygon class="cls-16" points="0 46.24 3.49 47.4 4.08 31.86 3.26 32.84 0 46.24"/>
+      <polygon class="cls-11" points="0 46.24 3.49 47.4 4.65 60.53 0 46.24"/>
+      <polygon class="cls-1" points="2.33 53.32 1.26 60.53 6.24 74.86 6.63 70.8 4.65 60.53 2.33 53.32"/>
+      <polygon class="cls-6" points="7.4 76.87 6.24 74.86 6.63 70.8 9.25 76.99 7.4 76.87"/>
+      <polygon class="cls-7" points="10.02 78.78 11.22 76.59 6.63 70.8 10.02 78.78"/>
+      <polygon class="cls-20" points="11.22 76.59 14.83 79.44 10.02 78.78 11.22 76.59"/>
+      <polygon class="cls-37" points="11.22 76.59 21.03 74.26 20.05 76.45 11.22 76.59"/>
+      <polygon class="cls-9" points="14.83 79.44 20.05 76.45 11.22 76.59 14.83 79.44"/>
+      <polygon class="cls-37" points="21.28 79.15 20.05 76.45 14.83 79.44 21.28 79.15"/>
+      <polygon class="cls-5" points="22.39 78.48 20.05 76.45 21.03 74.26 25.6 75.91 22.39 78.48"/>
+      <polygon class="cls-37" points="27.84 72.85 21.03 74.26 25.6 75.91 27.84 72.85"/>
+      <polygon class="cls-37" points="28.93 77.87 25.31 78.48 22.39 78.48 25.6 75.91 28.93 77.87"/>
+      <polygon class="cls-34" points="27.84 72.85 28.93 77.87 25.6 75.91 27.84 72.85"/>
+      <polygon class="cls-3" points="21.84 7.13 24.66 0 22.47 8.19 21.84 7.13"/>
+    </g>
+  </g>
+</svg>

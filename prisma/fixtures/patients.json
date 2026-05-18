@@ -1,0 +1,34 @@
+[
+  {
+    "id": "patient-jordan-avery",
+    "externalId": "EHR-JA-001",
+    "firstName": "Jordan",
+    "lastName": "Avery",
+    "dob": "1968-03-12T00:00:00.000Z",
+    "sex": "F"
+  },
+  {
+    "id": "patient-sam-rodriguez",
+    "externalId": "EHR-SR-001",
+    "firstName": "Sam",
+    "lastName": "Rodriguez",
+    "dob": "1972-09-04T00:00:00.000Z",
+    "sex": "M"
+  },
+  {
+    "id": "patient-priya-shah",
+    "externalId": "EHR-PS-001",
+    "firstName": "Priya",
+    "lastName": "Shah",
+    "dob": "1985-07-22T00:00:00.000Z",
+    "sex": "F"
+  },
+  {
+    "id": "patient-eleanor-vance",
+    "externalId": "EHR-EV-001",
+    "firstName": "Eleanor",
+    "lastName": "Vance",
+    "dob": "1954-10-05T00:00:00.000Z",
+    "sex": "F"
+  }
+]
