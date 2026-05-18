@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function LoginPage() {
   return (
     <div className="min-h-screen bg-muted flex items-center justify-center">
@@ -6,16 +8,14 @@ export default function LoginPage() {
           <h1 className="text-xl font-semibold text-surface-foreground">PA Workflow</h1>
           <p className="text-sm text-muted-foreground">Sign in to continue</p>
         </div>
-        <form action="/api/auth/login-as-demo-provider" method="POST">
-          <button
-            type="submit"
-            className="w-full bg-primary text-primary-foreground rounded-lg px-4 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-          >
-            Sign in as demo provider
-          </button>
-        </form>
+        <Link
+          href="/launch/standalone"
+          className="block w-full bg-primary text-primary-foreground rounded-lg px-4 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        >
+          Continue to demo patients
+        </Link>
         <p className="text-xs text-muted-foreground">
-          This sets a session cookie for the hackathon demo environment.
+          Choose a demo patient to enter the workflow. Synthetic data only.
         </p>
       </div>
     </div>
