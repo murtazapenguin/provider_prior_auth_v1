@@ -12,10 +12,10 @@ export default function LoginPage() {
           href="/launch/standalone"
           className="block w-full bg-primary text-primary-foreground rounded-lg px-4 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
         >
-          Continue to demo patients
+          Sign in to test
         </Link>
         <p className="text-xs text-muted-foreground">
-          Choose a demo patient to enter the workflow. Synthetic data only.
+          Synthetic test environment for the prior-auth workflow.
         </p>
       </div>
     </div>
