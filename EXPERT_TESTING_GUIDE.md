@@ -83,7 +83,6 @@ missing, or anything that looks invented?
 
 ## Giving feedback
 
-`<Feedback channel — to be provided>`
-
-For each item, please note: the procedure code or policy, what you expected, and what
-you saw.
+Send your feedback async — email, Slack, or whatever channel you'd normally use to
+reach us. For each item, please note: the procedure code or policy, what you expected,
+and what you saw.
