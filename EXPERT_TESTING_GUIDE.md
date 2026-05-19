@@ -1,78 +1,66 @@
 # Provider PA — Expert Testing Guide
 
 Thanks for helping us test. This is a **prior-authorization (PA) workflow tool for
-providers**: it pulls clinical context, identifies procedure/drug codes, checks them
-against payer policies, extracts supporting evidence with citations, walks the provider
-through review, and submits to the payer.
+providers**: it identifies procedure / drug codes, checks them against payer policies,
+extracts supporting evidence with citations, walks the provider through review, and
+submits to the payer.
 
 We'd like your feedback on two things:
 
 1. **The workflow** — does it match how prior auth actually works in practice?
 2. **The policy extraction** — are the AI-extracted criteria and codes accurate?
 
+You're testing the actual product. There are no canned scenarios — you'll use it the way
+a provider would.
+
 ---
 
 ## Accessing the app
 
-Open **`<APP URL — provided separately>`**. You'll land on a launcher — pick a demo
-provider/patient to enter the app.
+Open **https://provider-prior-auth-v1.vercel.app** and click **"Sign in to test"** →
+**"Continue"**. You'll land in an empty queue. Use the app from there as a real provider
+would.
 
-Everything runs on **synthetic data — there is no real PHI.**
+Everything runs on **synthetic data — there is no real PHI**. Anything you create is
+visible to other testers (shared test environment).
 
 ---
 
 ## What's real vs. simulated
 
-So you can ignore anything that looks "mocked," here's the split:
-
 | Real | Simulated |
 |---|---|
-| The AI — code derivation, evidence extraction, citations | EHR connection (4 fixed synthetic patients) |
-| The policies — real UHC policy PDFs, AI-extracted | Insurance eligibility check |
-| The PA state machine + audit log | Payer submission + decision (a timer-driven simulator) |
-| The admin policy-review surface | Provider login |
+| The AI — code derivation, evidence extraction, citations | EHR connection (you create patients in-app instead of pulling from an EHR) |
+| The policies — 87 UHC policies, AI-extracted from real PDFs | Insurance eligibility check |
+| The PA state machine + audit log | Payer submission + decision (timer-driven simulator) |
+| The admin policy-review surface | Provider login (a button signs you in as a generic tester) |
 
 ---
 
-## Part 1 — Walk the 4 built scenarios
+## Part 1 — Walk a prior-authorization workflow
 
-These come with full clinical data preset. Open each from the queue:
+The queue starts empty. To run a PA:
 
-1. **Head CT (Jordan Avery)** — *happy path.* Everything is already documented; criteria
-   pass on the first check; submit → approved. Tests the basic loop.
-2. **Knee MRI (Sam Rodriguez)** — *missing-evidence loop.* One criterion (conservative
-   therapy) comes back needing documentation; upload the PT records; re-check; all green;
-   submit. Tests the upload-and-recheck flow.
-3. **Botox (Priya Shah)** — *the complex one.* A criterion returns `needs_info`; you
-   manually override it with a rationale; submit; the payer returns an RFI; you respond;
-   approved. Tests manual override + the RFI loop.
-4. **Power Wheelchair** — a durable-medical-equipment PA scenario. Tests a non-imaging,
-   non-drug policy.
+1. Go to **`/pa/new`** (the "Start Prior Authorization" wizard).
+2. Enter a procedure or drug code — e.g. `69930` (cochlear implant), `64490` (facet joint injection), `J0585` (Botox), `73721` (Knee MRI), `95810` (sleep study). Choose the payer (**United Healthcare**).
+3. The app checks the code against the 87 ingested policies and tells you whether PA is required (and which policy applies).
+4. Continue → create a new patient (name, DOB, sex, member ID, plan). You can also pick an existing patient if other testers have already created any.
+5. Start the PA. You'll land on the PA detail page.
+6. **Upload a clinical note** — a synthetic / de-identified case of your choice (PDF or plain text). This is the evidence the AI will check against the policy criteria.
+7. Run the **criteria check**. The AI evaluates each criterion against your uploaded note and cites the supporting passages.
+8. Review the results. Override any incorrect AI findings with a rationale. Submit when ready.
+9. Watch the payer simulator advance: *pending → in_progress → approved* (or *RFI*). If a PA seems stuck, use the in-app fast-forward control.
 
-For each, watch for: **do the derived codes look right? Are the criteria the right
-criteria? Do the citations point to the correct evidence? Does the flow feel like real
-prior auth?**
-
----
-
-## Part 2 — Test against the full policy set
-
-Beyond the 4 scenarios, the app holds **81 UHC policies auto-extracted from the real
-policy PDFs.** To exercise any of them:
-
-1. Go to **"Start Prior Authorization"** (`/pa/new`).
-2. Enter a procedure code — e.g. `69930` (cochlear implant) or `64490` (facet joint
-   injection) — and select the payer (UnitedHealthcare).
-3. The app tells you whether PA is required and which policy applies.
-4. Continue → pick or create a patient → start the PA.
-5. On the PA page, upload a relevant clinical note (a synthetic/de-identified example of
-   your own) and run the criteria check.
-
-This is the real product path — it works for any policy that has procedure codes.
+**For each run, watch for:**
+- **Code matching** — does the right policy come up for the code you entered?
+- **Criteria** — are the right criteria evaluated? Is the AI's reasoning sound?
+- **Citations** — do the cited passages actually support the AI's conclusion?
+- **Override + RFI flows** — do they feel right for real PA work?
+- **Overall feel** — does this match how prior auth actually works in your practice?
 
 ---
 
-## Part 3 — Review policy extraction quality
+## Part 2 — Review policy extraction quality
 
 To review the AI-extracted policies directly, go to **`/policies`** (the admin view).
 Each policy shows its extracted criteria and applicable codes — compare them against the
@@ -85,17 +73,17 @@ missing, or anything that looks invented?
 
 ## Known limitations — no need to report these
 
-- **13 of the 81 policies have no codes yet** — they won't appear when you enter a code
-  in `/pa/new`. Known; codes still need to be added.
-- **Some policy titles are rough** (e.g. "Cosentyx Iex") — they're auto-derived from
-  filenames and get cleaned up during review.
-- **Power Wheelchair** — a 500 error there means the AI service is briefly down; retry.
-- All patient and clinical data is synthetic.
+- **13 of the 87 policies have no codes yet** — they won't appear when you enter a code in `/pa/new`. Known; codes still need to be added.
+- **Some policy titles are auto-derived from filenames** and read roughly (e.g. "Cosentyx Iex") — they're cleaned up during human review before publishing.
+- **Payer simulator runs on a manual fast-forward**, not a timer (the sub-daily cron requires a paid Vercel plan).
+- **Shared test environment** — every tester sees every other tester's patients and PAs.
+- **All clinical content is what testers upload** — there's no patient roster pre-loaded; you bring the cases (synthetic or de-identified).
 
 ---
 
 ## Giving feedback
 
-`<Feedback channel — shared doc / form / etc., to be provided>`
+`<Feedback channel — to be provided>`
 
-For each item, please note: the scenario or policy, what you expected, and what you saw.
+For each item, please note: the procedure code or policy, what you expected, and what
+you saw.
