@@ -332,6 +332,8 @@ model Attachment {
   uploadedBy  String   // provider id or "system"
   uploadedAt  DateTime @default(now())
   extractedText String?  // text extracted at ingestion time, for re-runs
+  pageImages    Json?    // pdfviewer-data shape (files, presigned_urls); populated by sidecar /ingest-attachment after OCR + page-image generation
+  ocrLineCount  Int?     // count of OCR lines in extractedText; mirrors CachedDocumentReference.ocrLineCount
   @@index([priorAuthId, kind, uploadedAt])
 }
 

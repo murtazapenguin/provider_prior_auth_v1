@@ -229,6 +229,8 @@ model Attachment {
   uploadedBy    String
   uploadedAt    DateTime  @default(now())
   extractedText String?
+  pageImages    Json?     // pdfviewer-data shape (files, presigned_urls); populated by sidecar /ingest-attachment after OCR + page-image generation
+  ocrLineCount  Int?      // count of OCR lines extracted; mirrors CachedDocumentReference.ocrLineCount
   kind          String    @default("upload")
 
   @@index([priorAuthId, kind, uploadedAt])

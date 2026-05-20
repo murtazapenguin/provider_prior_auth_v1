@@ -31,6 +31,11 @@ class Settings(BaseSettings):
     aws_secret_access_key: str = ''
     aws_session_token: str = ''
     s3_ocr_staging_bucket: str = ''
+    # Durable storage for tester/provider uploads + their rendered page images.
+    # Set via S3_ATTACHMENTS_BUCKET env var; required by /ingest-attachment.
+    # Can share the same bucket as s3_ocr_staging_bucket — Textract's staging
+    # prefix is distinct from our `attachments/<paId>/<attachmentId>/` layout.
+    s3_attachments_bucket: str = ''
 
     # Langfuse tracing (off by default — set vars to enable)
     langfuse_public_key: str = ''

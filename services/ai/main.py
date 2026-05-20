@@ -63,6 +63,7 @@ def create_app() -> FastAPI:
     from services.ai.modules.health.routes import router as health_router
     from services.ai.modules.derive_codes.routes import router as derive_codes_router
     from services.ai.modules.extract_evidence.routes import router as extract_evidence_router
+    from services.ai.modules.ingest_attachment.routes import router as ingest_attachment_router
     from services.ai.modules.ingest_documents.routes import router as ingest_documents_router
     from services.ai.modules.ingest_policy.routes import router as ingest_policy_router
     from services.ai.modules.ocr.routes import router as ocr_router
@@ -72,6 +73,7 @@ def create_app() -> FastAPI:
     app.include_router(health_router)
     app.include_router(derive_codes_router)
     app.include_router(extract_evidence_router)
+    app.include_router(ingest_attachment_router)
     app.include_router(ingest_documents_router)
     app.include_router(ingest_policy_router)
     app.include_router(ocr_router)
