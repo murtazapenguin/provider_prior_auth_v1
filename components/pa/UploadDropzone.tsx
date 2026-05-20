@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Modal, Dropzone, Button } from '@/components/ui'
-import { uploadAndRecheckAction } from '@/app/(provider)/pa/[id]/upload-action'
+import { uploadAttachment, UploadError } from '@/lib/uploads/clientUpload'
 
 interface UploadDropzoneProps {
   open: boolean
@@ -28,21 +28,21 @@ export default function UploadDropzone({ open, onClose, paId, onComplete }: Uplo
     setUploading(true)
     setError(null)
 
-    const fd = new FormData()
-    fd.append('file', selectedFile)
-
-    const result = await uploadAndRecheckAction(paId, fd)
-
-    if (!result.ok) {
-      setError(result.error ?? 'Upload failed. Please try again.')
+    try {
+      await uploadAttachment({ paId, file: selectedFile })
       setUploading(false)
-      return
+      setSelectedFile(null)
+      onComplete()
+      onClose()
+    } catch (err) {
+      const message = err instanceof UploadError
+        ? err.message
+        : err instanceof Error
+          ? err.message
+          : 'Upload failed. Please try again.'
+      setError(message)
+      setUploading(false)
     }
-
-    setUploading(false)
-    setSelectedFile(null)
-    onComplete()
-    onClose()
   }
 
   function handleClose() {
@@ -63,9 +63,9 @@ export default function UploadDropzone({ open, onClose, paId, onComplete }: Uplo
 
         <Dropzone
           onFiles={handleFiles}
-          accept=".pdf,.txt,.doc,.docx,.png,.jpg,.jpeg"
+          accept=".pdf,application/pdf"
           disabled={uploading}
-          hint="PDF, DOCX, TXT, PNG, JPG up to 50MB"
+          hint="PDF only · up to 10 MB"
         />
 
         {selectedFile && !uploading && (

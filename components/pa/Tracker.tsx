@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { StatusPill, Button, Card, Spinner, Modal, Dropzone, Textarea, useToast, ToastContainer } from '@/components/ui'
 import type { PaStatus } from '@/components/ui/StatusPill'
+import { uploadAttachment } from '@/lib/uploads/clientUpload'
 
 // ─── Types mirroring the GET /api/pa/:id response ────────────────────────────
 
@@ -76,16 +77,10 @@ function RfiRespondModal({ paId, open, onClose, onSuccess }: RfiRespondModalProp
     }
     setSubmitting(true)
     try {
-      // If files were attached, upload them first
+      // If files were attached, upload them first via the direct-to-S3 flow.
       if (files.length > 0) {
         for (const file of files) {
-          const form = new FormData()
-          form.append('file', file)
-          const upRes = await fetch(`/api/pa/${paId}/upload`, { method: 'POST', body: form })
-          if (!upRes.ok) {
-            const body = await upRes.json().catch(() => ({}))
-            throw new Error(body.detail ?? `Upload failed: ${file.name}`)
-          }
+          await uploadAttachment({ paId, file })
         }
       }
 

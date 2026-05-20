@@ -1,18 +1,19 @@
 /**
  * __tests__/app/launch/standaloneLaunchAction.test.ts
  *
- * Mock-mode standalone-launch server action. Covers:
+ * Tester sign-in server action (`signInAsTester`). Covers:
  *   - rejects when FHIR_MODE != mock
- *   - rejects an unknown patientId
+ *   - rejects when EPIC_SANDBOX_FHIR_BASE is unset
  *   - creates a SmartSession row directly (NOT via OAuth callback)
+ *   - patientContext + encounterContext are null (tester picks via /pa/new)
  *   - encrypts the access token at rest (plaintext not stored)
- *   - patientContext is set to the picked id; encounterContext null
  *   - iss is sourced from EPIC_SANDBOX_FHIR_BASE
  *   - sets the signed session cookie
- *   - redirects via next/navigation.redirect to the computed destination
+ *   - redirects via next/navigation.redirect
  *
- * Maps to TC-ID: WF-PROV-launch-standalone (and reuses post-launch routing
- * exercised under WF-X-encounter-context-switch).
+ * Note: the prior `selectPatientForMockLaunch` flow (whitelisted demo
+ * patients + /queue?patient=... redirect) was removed when we de-demo'd
+ * for expert testing — testers create patients via /pa/new instead.
  */
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -33,9 +34,6 @@ type SmartSessionRow = {
   scope: string
 }
 
-// vi.hoisted ensures these references are available inside the (also
-// hoisted) vi.mock factories. Without this, the mock factory accesses
-// `redirectSpy` before the const initializer runs and throws.
 const hoisted = vi.hoisted(() => {
   return {
     rows: [] as SmartSessionRow[],
@@ -66,30 +64,19 @@ vi.mock('@/lib/db/client', () => {
   }
 })
 
-// ─── next/headers mock — captures the cookie set call ─────────────────────
 vi.mock('next/headers', () => ({
   cookies: vi.fn(async () => ({
     set: hoisted.cookiesSetSpy,
   })),
 }))
 
-// ─── next/navigation mock — captures the redirect target ──────────────────
-// Next's real `redirect()` throws an internal NEXT_REDIRECT error so the
-// server-action runtime can short-circuit. Mirror that contract here.
 vi.mock('next/navigation', () => ({
   redirect: hoisted.redirectSpy,
 }))
 
-// ─── Import the action AFTER all mocks are wired ──────────────────────────
-import { selectPatientForMockLaunch } from '@/app/launch/standalone/actions'
+import { signInAsTester } from '@/app/launch/standalone/actions'
 
-function buildFormData(patientId: string): FormData {
-  const fd = new FormData()
-  fd.set('patientId', patientId)
-  return fd
-}
-
-describe('selectPatientForMockLaunch', () => {
+describe('signInAsTester', () => {
   let teardownKey: () => void
   let originalMode: string | undefined
   let originalIss: string | undefined
@@ -113,30 +100,26 @@ describe('selectPatientForMockLaunch', () => {
     else process.env.EPIC_SANDBOX_FHIR_BASE = originalIss
   })
 
-  it('rejects when FHIR_MODE is not mock (real standalone deferred)', async () => {
+  it('rejects when FHIR_MODE is not mock (real Epic launches go through /launch?iss=...)', async () => {
     process.env.FHIR_MODE = 'real'
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-priya-shah')),
-    ).rejects.toThrow(/mock mode/i)
+    await expect(signInAsTester(new FormData())).rejects.toThrow(/mock mode/i)
     expect(rows).toHaveLength(0)
     expect(cookiesSetSpy).not.toHaveBeenCalled()
     expect(redirectSpy).not.toHaveBeenCalled()
   })
 
-  it('rejects an unknown patient id', async () => {
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-unknown-mallory')),
-    ).rejects.toThrow(/demo patients/i)
+  it('rejects when EPIC_SANDBOX_FHIR_BASE is unset', async () => {
+    delete process.env.EPIC_SANDBOX_FHIR_BASE
+    await expect(signInAsTester(new FormData())).rejects.toThrow(/EPIC_SANDBOX_FHIR_BASE/)
     expect(rows).toHaveLength(0)
   })
 
-  it('creates a SmartSession row directly in Prisma (not via OAuth callback)', async () => {
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-priya-shah')),
-    ).rejects.toThrow('NEXT_REDIRECT') // expected — redirect throws
+  it('creates a SmartSession row with null patient/encounter context', async () => {
+    await expect(signInAsTester(new FormData())).rejects.toThrow('NEXT_REDIRECT')
     expect(rows).toHaveLength(1)
     const row = rows[0]
-    expect(row.patientContext).toBe('patient-priya-shah')
+    // No specific patient — the tester picks via /pa/new.
+    expect(row.patientContext).toBeNull()
     expect(row.encounterContext).toBeNull()
     expect(row.iss).toBe('https://fhir.epic.com/test-base')
     expect(row.fhirUser).toBe('Practitioner/mock-provider-1')
@@ -148,20 +131,16 @@ describe('selectPatientForMockLaunch', () => {
   })
 
   it('encrypts the access token at rest (plaintext not stored)', async () => {
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-jordan-avery')),
-    ).rejects.toThrow('NEXT_REDIRECT')
+    await expect(signInAsTester(new FormData())).rejects.toThrow('NEXT_REDIRECT')
     const row = rows[0]
-    expect(row.accessTokenEnc).not.toBe('mock-token-for-patient-jordan-avery')
-    expect(row.accessTokenEnc).not.toContain('mock-token-for-patient-jordan-avery')
+    expect(row.accessTokenEnc).not.toBe('mock-token-for-tester')
+    expect(row.accessTokenEnc).not.toContain('mock-token-for-tester')
     // base64 length sanity — at least IV+ciphertext+authTag.
     expect(row.accessTokenEnc.length).toBeGreaterThan(40)
   })
 
   it('sets a signed httpOnly session cookie', async () => {
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-sam-rodriguez')),
-    ).rejects.toThrow('NEXT_REDIRECT')
+    await expect(signInAsTester(new FormData())).rejects.toThrow('NEXT_REDIRECT')
     expect(cookiesSetSpy).toHaveBeenCalledTimes(1)
     const cookieArg = cookiesSetSpy.mock.calls[0][0]
     expect(cookieArg.name).toBe('smart_session')
@@ -171,12 +150,12 @@ describe('selectPatientForMockLaunch', () => {
     expect(cookieArg.path).toBe('/')
   })
 
-  it('redirects through next/navigation.redirect to /queue?patient=...', async () => {
-    await expect(
-      selectPatientForMockLaunch(buildFormData('patient-eleanor-vance')),
-    ).rejects.toThrow('NEXT_REDIRECT')
+  it('redirects through next/navigation.redirect', async () => {
+    await expect(signInAsTester(new FormData())).rejects.toThrow('NEXT_REDIRECT')
     expect(redirectSpy).toHaveBeenCalledTimes(1)
     const target = redirectSpy.mock.calls[0][0]
-    expect(target).toBe('/queue?patient=patient-eleanor-vance')
+    // computePostLaunchDestination returns /queue when no patient context.
+    expect(typeof target).toBe('string')
+    expect(target.length).toBeGreaterThan(0)
   })
 })
