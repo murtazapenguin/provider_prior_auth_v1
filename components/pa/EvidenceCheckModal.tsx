@@ -40,6 +40,11 @@ export interface AttachmentSummary {
   uploadedAt: string | Date
   /** Pre-extracted text. May be null for binary attachments where OCR hasn't run. */
   extractedText: string | null
+  /** Phase 6 (PDF-viewer build): canonical pdfviewer-data shape populated by
+   *  the sidecar's /ingest-attachment after OCR + page-image generation.
+   *  Present for uploads processed by the new pipeline; null for legacy rows
+   *  (DocumentBody falls back to the mime-based iframe / text-on-page render). */
+  pageImages: unknown | null
 }
 
 interface EvidenceCheckModalProps {
@@ -231,25 +236,32 @@ export default function EvidenceCheckModal({
   // Highlight context for the doc body. Pull from the currently-selected
   // criterion's currently-stepped citation. Re-resolves when either changes.
   const highlightContext = useMemo(() => {
-    if (!selectedCriterion) return { lineNumbers: [], supportingTexts: [] }
+    const empty = { lineNumbers: [], supportingTexts: [], boundingBoxes: [] }
+    if (!selectedCriterion) return empty
     const step = citationStep[selectedCriterion.criterionId] ?? 0
     const safeStep = Math.min(Math.max(step, 0), Math.max(selectedCriterion.citations.length - 1, 0))
     const cit = selectedCriterion.citations[safeStep]
-    if (!cit) return { lineNumbers: [], supportingTexts: [] }
+    if (!cit) return empty
     // Only apply highlight if the citation actually points at the currently
     // visible doc (e.g. user clicked a row, then manually navigated to a
     // different doc — don't carry stale highlights).
     const resolved = resolveCitationToDoc(cit, clinicalNotes, attachments)
-    if (!resolved || !selectedDoc) return { lineNumbers: [], supportingTexts: [] }
+    if (!resolved || !selectedDoc) return empty
     if (
       resolved.selection.source !== selectedDoc.source ||
       resolved.selection.id !== selectedDoc.id
     ) {
-      return { lineNumbers: [], supportingTexts: [] }
+      return empty
     }
+    // Citation.bboxes JSON shape matches PdfBoundingBox (see ARCHITECTURE.md
+    // `model Citation` and the canonical bbox-format contract). All entries
+    // on one citation reference one source doc, so passing the whole array is
+    // correct — DocumentPdfViewer's overlay code filters by document_name
+    // internally for the PDF branch.
     return {
       lineNumbers: cit.lineNumbers ?? [],
       supportingTexts: cit.supportingTexts,
+      boundingBoxes: (Array.isArray(cit.bboxes) ? cit.bboxes : []) as unknown as import('@/components/pa/DocumentPdfViewer').PdfBoundingBox[],
     }
   }, [selectedCriterion, citationStep, selectedDoc, clinicalNotes, attachments])
 
@@ -327,6 +339,7 @@ export default function EvidenceCheckModal({
               onBack={handleBackToList}
               highlightLineNumbers={highlightContext.lineNumbers}
               highlightSupportingTexts={highlightContext.supportingTexts}
+              highlightBoundingBoxes={highlightContext.boundingBoxes}
             />
           ) : (
             <DocumentList

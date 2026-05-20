@@ -128,6 +128,11 @@ export default async function PaDetailPage({ params }: Props) {
       mimeType: a.mimeType,
       uploadedAt: a.uploadedAt.toISOString(),
       extractedText: a.extractedText,
+      // Phase 6 PDF-viewer build: when /ingest-attachment has run, pageImages
+      // carries the pdfviewer-data shape (files + presigned_urls); DocumentBody
+      // routes those uploads through DocumentPdfViewer's PDF branch instead of
+      // the iframe / text fallback.
+      pageImages: a.pageImages,
     }))
     .sort((a, b) => (a.uploadedAt > b.uploadedAt ? -1 : 1))
 

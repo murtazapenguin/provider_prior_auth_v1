@@ -16,7 +16,10 @@
 // DocumentPdfViewer's fallback branch — there's now a single citation viewer
 // rather than two.
 
-import DocumentPdfViewer, { type PdfViewerDocumentData } from '@/components/pa/DocumentPdfViewer'
+import DocumentPdfViewer, {
+  type PdfBoundingBox,
+  type PdfViewerDocumentData,
+} from '@/components/pa/DocumentPdfViewer'
 import type {
   ClinicalNoteSummary,
   AttachmentSummary,
@@ -32,6 +35,9 @@ interface DocumentBodyProps {
   onBack: () => void
   highlightLineNumbers?: number[]
   highlightSupportingTexts?: string[]
+  /** Citation-derived bboxes to overlay on the PDF branch. The text-on-page
+   *  fallback ignores these (uses lineNumbers + supportingTexts instead). */
+  highlightBoundingBoxes?: PdfBoundingBox[]
 }
 
 const NOTE_TYPE_LABELS: Record<string, string> = {
@@ -56,9 +62,11 @@ export default function DocumentBody({
   onBack,
   highlightLineNumbers,
   highlightSupportingTexts,
+  highlightBoundingBoxes,
 }: DocumentBodyProps) {
   const lineNumbers = highlightLineNumbers ?? []
   const supportingTexts = highlightSupportingTexts ?? []
+  const boundingBoxes = highlightBoundingBoxes ?? []
 
   const title =
     doc.kind === 'note'
@@ -106,19 +114,15 @@ export default function DocumentBody({
       <div className="flex-1 min-h-0 overflow-hidden bg-muted/20">
         {doc.kind === 'note' && (
           <div className="h-full overflow-auto bg-surface">
-            {/* Phase 6 T10 forward-wiring: when T4 has ingested the FHIR DocumentReference
-                for this note, pdfUrl + pageImages are populated and DocumentPdfViewer
-                routes through its PDF branch. Legacy seeded notes (Phase 1 fixtures,
-                pdfUrl=NULL) fall back to text-on-page rendering with line/text highlights.
-
-                TODO(t10-followup): thread Citation.bboxes through DocumentBody as
-                highlightBoundingBoxes so the PDF branch shows bbox overlays for citations
-                (currently the PDF renders without overlays — citation context lives in the
-                checklist sidebar, not on the PDF page). lineNumbers + supportingTexts are
-                text-branch-only per DocumentPdfViewer's discriminated union (lines 67-71). */}
+            {/* When T4 has ingested the FHIR DocumentReference for this note,
+                pdfUrl + pageImages are populated and DocumentPdfViewer routes
+                through its PDF branch with citation bboxes overlaid.  Legacy
+                seeded notes (Phase 1 fixtures, pdfUrl=NULL) fall back to text-
+                on-page rendering with line/text highlights. */}
             {doc.note.pdfUrl && doc.note.pageImages ? (
               <DocumentPdfViewer
                 documentData={doc.note.pageImages as PdfViewerDocumentData}
+                boundingBoxes={boundingBoxes}
               />
             ) : (
               <DocumentPdfViewer
@@ -136,6 +140,7 @@ export default function DocumentBody({
             streamingUrl={streamingUrl as string}
             lineNumbers={lineNumbers}
             supportingTexts={supportingTexts}
+            boundingBoxes={boundingBoxes}
           />
         )}
       </div>
@@ -173,12 +178,28 @@ function AttachmentBody({
   streamingUrl,
   lineNumbers,
   supportingTexts,
+  boundingBoxes,
 }: {
   attachment: AttachmentSummary
   streamingUrl: string
   lineNumbers: number[]
   supportingTexts: string[]
+  boundingBoxes: PdfBoundingBox[]
 }) {
+  // When the sidecar's /ingest-attachment has run, we have pre-rendered page
+  // images + bbox-anchored OCR lines in `pageImages` — route through
+  // DocumentPdfViewer's PDF branch with citation bboxes overlaid (same path
+  // as FHIR-ingested clinical notes).  Falls through to the mime-based
+  // routing below for legacy uploads without page images.
+  if (attachment.pageImages) {
+    return (
+      <DocumentPdfViewer
+        documentData={attachment.pageImages as PdfViewerDocumentData}
+        boundingBoxes={boundingBoxes}
+      />
+    )
+  }
+
   const mime = resolveEffectiveMime(attachment.filename, attachment.mimeType)
 
   if (mime === 'application/pdf') {
