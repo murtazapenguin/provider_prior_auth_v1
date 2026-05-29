@@ -15,13 +15,22 @@ import Link from 'next/link'
 import DashboardKpiCard from '@/components/pa/DashboardKpiCard'
 import DashboardBars from '@/components/pa/DashboardBars'
 import DashboardRecentActivity from '@/components/pa/DashboardRecentActivity'
+import QueueFilteredList from '@/components/pa/QueueFilteredList'
 import { getDashboardStats } from '@/lib/dashboard/queries'
+import { QUEUE_VIEWS, getFilteredPriorAuths, isQueueViewKey } from '@/lib/dashboard/queueViews'
 
 // Don't cache — counts update on every page load.
 export const dynamic = 'force-dynamic'
 
-export default async function DashboardPage() {
+interface DashboardPageProps {
+  searchParams: Promise<{ view?: string }>
+}
+
+export default async function DashboardPage({ searchParams }: DashboardPageProps) {
+  const { view } = await searchParams
+  const activeView = isQueueViewKey(view) ? view : null
   const stats = await getDashboardStats()
+  const filteredRows = activeView ? await getFilteredPriorAuths(activeView) : []
   const today = new Date().toLocaleDateString(undefined, {
     weekday: 'long',
     year: 'numeric',
@@ -47,7 +56,7 @@ export default async function DashboardPage() {
         </p>
       </div>
 
-      {/* Row 1 — main KPIs (all clickable → filtered queue) */}
+      {/* Row 1 — main KPIs (clickable → inline filter below) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <DashboardKpiCard
           label="Total Active"
@@ -55,7 +64,8 @@ export default async function DashboardPage() {
           sublabel="in flight today"
           iconBg="bg-blue-500"
           icon={<IconLines />}
-          href="/queue?view=active"
+          href="/dashboard?view=active"
+          isActive={activeView === 'active'}
         />
         <DashboardKpiCard
           label="Needs Review"
@@ -63,7 +73,8 @@ export default async function DashboardPage() {
           sublabel="flagged criteria or RFI"
           iconBg="bg-orange-500"
           icon={<IconWarning />}
-          href="/queue?view=needs-review"
+          href="/dashboard?view=needs-review"
+          isActive={activeView === 'needs-review'}
         />
         <DashboardKpiCard
           label="Approved"
@@ -75,7 +86,8 @@ export default async function DashboardPage() {
           }
           iconBg="bg-green-500"
           icon={<IconCheck />}
-          href="/queue?view=approved"
+          href="/dashboard?view=approved"
+          isActive={activeView === 'approved'}
         />
         <DashboardKpiCard
           label="Denied"
@@ -83,7 +95,8 @@ export default async function DashboardPage() {
           sublabel={stats.totals.denied === 0 ? 'no denials' : 'appeal available'}
           iconBg="bg-red-500"
           icon={<IconX />}
-          href="/queue?view=denied"
+          href="/dashboard?view=denied"
+          isActive={activeView === 'denied'}
         />
       </div>
 
@@ -95,7 +108,8 @@ export default async function DashboardPage() {
           sublabel="all criteria met"
           iconBg="bg-purple-500"
           icon={<IconSpark />}
-          href="/queue?view=ready"
+          href="/dashboard?view=ready"
+          isActive={activeView === 'ready'}
         />
         <DashboardKpiCard
           label="Awaiting Outcome"
@@ -103,7 +117,8 @@ export default async function DashboardPage() {
           sublabel="submitted, payer review"
           iconBg="bg-sky-500"
           icon={<IconClock />}
-          href="/queue?view=awaiting"
+          href="/dashboard?view=awaiting"
+          isActive={activeView === 'awaiting'}
         />
         <DashboardKpiCard
           label="Avg Confidence"
@@ -115,7 +130,8 @@ export default async function DashboardPage() {
           sublabel="lowest first"
           iconBg="bg-indigo-500"
           icon={<IconChart />}
-          href="/queue?view=low-confidence"
+          href="/dashboard?view=low-confidence"
+          isActive={activeView === 'low-confidence'}
         />
         <DashboardKpiCard
           label="Approval Rate"
@@ -127,46 +143,69 @@ export default async function DashboardPage() {
           sublabel="approved vs denied"
           iconBg="bg-teal-500"
           icon={<IconTrendUp />}
-          href="/queue?view=decisions"
+          href="/dashboard?view=decisions"
+          isActive={activeView === 'decisions'}
         />
       </div>
 
-      {/* Row 3 — 3 chart cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <DashboardBars
-          title="Pipeline Status"
-          rows={stats.pipeline.map((p) => ({
-            key: p.status,
-            label: p.label,
-            chipClass: pipelineChipClass(p.status),
-            count: p.count,
-          }))}
-          emptyMessage="No active prior auths."
-        />
-        <DashboardBars
-          title="By Service Type"
-          rows={stats.byServiceCategory.map((s) => ({
-            key: s.key,
-            label: s.label,
-            chipClass: s.chipClass,
-            count: s.count,
-          }))}
-          emptyMessage="No service breakdown yet."
-        />
-        <DashboardBars
-          title="Top Payers by Volume"
-          rows={stats.topPayers.map((p, i) => ({
-            key: p.name,
-            label: p.name,
-            rank: i + 1,
-            count: p.count,
-          }))}
-          emptyMessage="No payer activity yet."
-        />
-      </div>
+      {/* Row 3 — branches on filter state */}
+      {activeView ? (
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <p className="text-xs text-muted-foreground">
+              Filtered by the card above — click another card to switch, or{' '}
+              <Link href="/dashboard" className="text-primary hover:underline">
+                clear filter
+              </Link>
+              .
+            </p>
+          </div>
+          <QueueFilteredList
+            title={QUEUE_VIEWS[activeView].title}
+            subline={QUEUE_VIEWS[activeView].subline}
+            rows={filteredRows}
+          />
+        </div>
+      ) : (
+        <>
+          {/* 3 chart cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <DashboardBars
+              title="Pipeline Status"
+              rows={stats.pipeline.map((p) => ({
+                key: p.status,
+                label: p.label,
+                chipClass: pipelineChipClass(p.status),
+                count: p.count,
+              }))}
+              emptyMessage="No active prior auths."
+            />
+            <DashboardBars
+              title="By Service Type"
+              rows={stats.byServiceCategory.map((s) => ({
+                key: s.key,
+                label: s.label,
+                chipClass: s.chipClass,
+                count: s.count,
+              }))}
+              emptyMessage="No service breakdown yet."
+            />
+            <DashboardBars
+              title="Top Payers by Volume"
+              rows={stats.topPayers.map((p, i) => ({
+                key: p.name,
+                label: p.name,
+                rank: i + 1,
+                count: p.count,
+              }))}
+              emptyMessage="No payer activity yet."
+            />
+          </div>
 
-      {/* Row 4 — recent activity */}
-      <DashboardRecentActivity rows={stats.recentActivity} />
+          {/* Recent activity */}
+          <DashboardRecentActivity rows={stats.recentActivity} />
+        </>
+      )}
 
       {/* Quick CTAs at the bottom */}
       <div className="flex flex-wrap gap-3">

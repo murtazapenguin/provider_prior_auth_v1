@@ -14,6 +14,8 @@ interface DashboardKpiCardProps {
   icon: ReactNode
   /** When set, the whole card becomes a Link to this URL with hover affordance. */
   href?: string
+  /** When true, render as the currently-active filter (selected state). */
+  isActive?: boolean
 }
 
 /**
@@ -30,6 +32,7 @@ export default function DashboardKpiCard({
   iconBg,
   icon,
   href,
+  isActive,
 }: DashboardKpiCardProps) {
   const body = (
     <>
@@ -48,18 +51,28 @@ export default function DashboardKpiCard({
     </>
   )
 
+  // Custom soft shadow matching the reference design — diffuse, low-opacity
+  // shadow that lifts the card off the muted background.
+  const baseShadow = 'shadow-[0_2px_8px_-1px_rgba(15,23,42,0.06),0_4px_18px_-2px_rgba(15,23,42,0.04)]'
+  const hoverShadow = 'hover:shadow-[0_4px_14px_-2px_rgba(15,23,42,0.08),0_8px_28px_-4px_rgba(15,23,42,0.06)]'
+  const activeRing = 'ring-2 ring-primary border-primary'
+
   if (href) {
     return (
       <Link
         href={href}
-        className="bg-surface rounded-xl border border-border p-5 flex items-start gap-4 shadow-sm hover:shadow-md hover:border-primary/40 transition-all focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        scroll={false}
+        aria-current={isActive ? 'true' : undefined}
+        className={`bg-surface rounded-xl p-5 flex items-start gap-4 transition-all focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${baseShadow} ${hoverShadow} ${
+          isActive ? activeRing : 'border border-border hover:border-primary/40'
+        }`}
       >
         {body}
       </Link>
     )
   }
   return (
-    <div className="bg-surface rounded-xl border border-border p-5 flex items-start gap-4 shadow-sm">
+    <div className={`bg-surface rounded-xl border border-border p-5 flex items-start gap-4 ${baseShadow}`}>
       {body}
     </div>
   )
