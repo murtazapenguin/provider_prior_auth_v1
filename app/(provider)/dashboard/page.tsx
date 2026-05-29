@@ -47,7 +47,7 @@ export default async function DashboardPage() {
         </p>
       </div>
 
-      {/* Row 1 — main KPIs */}
+      {/* Row 1 — main KPIs (all clickable → filtered queue) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <DashboardKpiCard
           label="Total Active"
@@ -55,6 +55,7 @@ export default async function DashboardPage() {
           sublabel="in flight today"
           iconBg="bg-blue-500"
           icon={<IconLines />}
+          href="/queue?view=active"
         />
         <DashboardKpiCard
           label="Needs Review"
@@ -62,6 +63,7 @@ export default async function DashboardPage() {
           sublabel="flagged criteria or RFI"
           iconBg="bg-orange-500"
           icon={<IconWarning />}
+          href="/queue?view=needs-review"
         />
         <DashboardKpiCard
           label="Approved"
@@ -73,6 +75,7 @@ export default async function DashboardPage() {
           }
           iconBg="bg-green-500"
           icon={<IconCheck />}
+          href="/queue?view=approved"
         />
         <DashboardKpiCard
           label="Denied"
@@ -80,6 +83,7 @@ export default async function DashboardPage() {
           sublabel={stats.totals.denied === 0 ? 'no denials' : 'appeal available'}
           iconBg="bg-red-500"
           icon={<IconX />}
+          href="/queue?view=denied"
         />
       </div>
 
@@ -91,6 +95,7 @@ export default async function DashboardPage() {
           sublabel="all criteria met"
           iconBg="bg-purple-500"
           icon={<IconSpark />}
+          href="/queue?view=ready"
         />
         <DashboardKpiCard
           label="Awaiting Outcome"
@@ -98,6 +103,7 @@ export default async function DashboardPage() {
           sublabel="submitted, payer review"
           iconBg="bg-sky-500"
           icon={<IconClock />}
+          href="/queue?view=awaiting"
         />
         <DashboardKpiCard
           label="Avg Confidence"
@@ -106,9 +112,10 @@ export default async function DashboardPage() {
               ? '—'
               : `${stats.totals.avgConfidencePct}%`
           }
-          sublabel="across active criteria"
+          sublabel="lowest first"
           iconBg="bg-indigo-500"
           icon={<IconChart />}
+          href="/queue?view=low-confidence"
         />
         <DashboardKpiCard
           label="Approval Rate"
@@ -120,6 +127,7 @@ export default async function DashboardPage() {
           sublabel="approved vs denied"
           iconBg="bg-teal-500"
           icon={<IconTrendUp />}
+          href="/queue?view=decisions"
         />
       </div>
 

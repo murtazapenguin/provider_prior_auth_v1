@@ -22,11 +22,14 @@
 import Link from 'next/link'
 import { prisma } from '@/lib/db/client'
 import QueueTabs from '@/components/pa/QueueTabs'
+import QueueFilteredList from '@/components/pa/QueueFilteredList'
+import { QUEUE_VIEWS, getFilteredPriorAuths, isQueueViewKey } from '@/lib/dashboard/queueViews'
 
 interface QueuePageProps {
   searchParams: Promise<{
     encounter?: string
     patient?: string
+    view?: string
   }>
 }
 
@@ -201,7 +204,34 @@ function PatientNotFoundBanner({ patientId }: { patientId: string }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function QueuePage({ searchParams }: QueuePageProps) {
-  const { encounter, patient } = await searchParams
+  const { encounter, patient, view } = await searchParams
+
+  // Dashboard-driven filtered view: when /queue?view=<key> is set and known,
+  // render a flat filtered list instead of the tabs. This is the click
+  // destination from dashboard KPI cards.
+  if (isQueueViewKey(view)) {
+    const def = QUEUE_VIEWS[view]
+    const rows = await getFilteredPriorAuths(view)
+    return (
+      <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <Link href="/dashboard" className="text-xs text-muted-foreground hover:text-primary">
+              ← Dashboard
+            </Link>
+            <h1 className="text-2xl font-bold text-surface-foreground mt-1">Work Queue</h1>
+          </div>
+          <Link
+            href="/pa/new"
+            className="inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-primary text-primary-foreground hover:opacity-90 px-4 py-2 text-sm"
+          >
+            Start new PA
+          </Link>
+        </div>
+        <QueueFilteredList title={def.title} subline={def.subline} rows={rows} />
+      </div>
+    )
+  }
 
   // Resolve banner state from query params. encounter wins over patient
   // (the routing helper guarantees encounter implies patient was set too).
