@@ -1,35 +1,37 @@
 /**
  * app/(provider)/queue/page.tsx
  *
- * Provider work queue page.
+ * Work Queue — flat filtered table.  Two layers:
  *
- * Two layers:
+ *   1. Context banner above the queue when launched from a SMART encounter
+ *      or patient param (legacy post-launch routing flow).
+ *   2. QueueFilters (search + 3 dropdowns) + QueueFilteredList (table).
  *
- *   1. (Phase 6 / T9 addition) Server-rendered context banner above the
- *      tabs. Triggered by query params from the post-launch routing tree
- *      (lib/smart/postLaunchRouting.ts):
- *        ?encounter={id}  → "No PA exists for this encounter yet" CTA
- *        ?patient={id}    → "Pick an encounter" list of recent encounters
- *
- *   2. (Phase 4) Existing client tabs UI — Action needed / Parked /
- *      Submitted — now lives in components/pa/QueueTabs.tsx (extracted
- *      verbatim from the previous client page; logic unchanged).
- *
- * The page is a Server Component because Layer 1 needs Prisma reads.
- * Layer 2 stays a Client Component for its tab interactivity.
+ * URL params honored:
+ *   - encounter, patient — SMART launch context (banner).
+ *   - view             — preset filter (from dashboard cards).
+ *   - status, service, priority, q — granular filters from QueueFilters.
  */
 
 import Link from 'next/link'
 import { prisma } from '@/lib/db/client'
-import QueueTabs from '@/components/pa/QueueTabs'
 import QueueFilteredList from '@/components/pa/QueueFilteredList'
-import { QUEUE_VIEWS, getFilteredPriorAuths, isQueueViewKey } from '@/lib/dashboard/queueViews'
+import QueueFilters from '@/components/pa/QueueFilters'
+import {
+  QUEUE_VIEWS,
+  getQueueRows,
+  isQueueViewKey,
+} from '@/lib/dashboard/queueViews'
 
 interface QueuePageProps {
   searchParams: Promise<{
     encounter?: string
     patient?: string
     view?: string
+    status?: string
+    service?: string
+    priority?: string
+    q?: string
   }>
 }
 
@@ -41,7 +43,7 @@ interface EncounterListItem {
   paId: string | null
 }
 
-// ─── Server-side reads (Phase 6 / T9 addition) ────────────────────────────────
+// ─── Server-side reads for context banners ────────────────────────────────────
 
 async function findExistingPaForEncounter(encounterId: string): Promise<string | null> {
   const pa = await prisma.priorAuth.findFirst({
@@ -80,7 +82,7 @@ async function findPatientById(patientId: string) {
   })
 }
 
-// ─── Banners ──────────────────────────────────────────────────────────────────
+// ─── Banner components (preserved from the legacy queue) ──────────────────────
 
 function EncounterContextBanner({ encounterId }: { encounterId: string }) {
   return (
@@ -185,17 +187,12 @@ function PatientEncountersSection({
 
 function PatientNotFoundBanner({ patientId }: { patientId: string }) {
   return (
-    <div
-      role="status"
-      className="rounded-2xl border border-warning/40 bg-warning/10 p-5"
-    >
-      <p className="text-sm font-semibold text-surface-foreground">
-        Patient not synced yet
-      </p>
+    <div role="status" className="rounded-2xl border border-warning/40 bg-warning/10 p-5">
+      <p className="text-sm font-semibold text-surface-foreground">Patient not synced yet</p>
       <p className="mt-0.5 text-xs text-muted-foreground">
-        Patient <code className="font-mono">{patientId}</code> is not yet in
-        the local database. The next FHIR sync from Epic will pull them in;
-        meanwhile, you can browse your queue below.
+        Patient <code className="font-mono">{patientId}</code> is not yet in the local
+        database. The next FHIR sync from Epic will pull them in; meanwhile, you can
+        browse your queue below.
       </p>
     </div>
   )
@@ -204,63 +201,40 @@ function PatientNotFoundBanner({ patientId }: { patientId: string }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function QueuePage({ searchParams }: QueuePageProps) {
-  const { encounter, patient, view } = await searchParams
+  const { encounter, patient, view, status, service, priority, q } = await searchParams
 
-  // Dashboard-driven filtered view: when /queue?view=<key> is set and known,
-  // render a flat filtered list instead of the tabs. This is the click
-  // destination from dashboard KPI cards.
-  if (isQueueViewKey(view)) {
-    const def = QUEUE_VIEWS[view]
-    const rows = await getFilteredPriorAuths(view)
-    return (
-      <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <Link href="/dashboard" className="text-xs text-muted-foreground hover:text-primary">
-              ← Dashboard
-            </Link>
-            <h1 className="text-2xl font-bold text-surface-foreground mt-1">Work Queue</h1>
-          </div>
-          <Link
-            href="/pa/new"
-            className="inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-primary text-primary-foreground hover:opacity-90 px-4 py-2 text-sm"
-          >
-            Start new PA
-          </Link>
-        </div>
-        <QueueFilteredList title={def.title} subline={def.subline} rows={rows} />
-      </div>
-    )
-  }
-
-  // Resolve banner state from query params. encounter wins over patient
-  // (the routing helper guarantees encounter implies patient was set too).
   let banner: React.ReactNode = null
-
   if (encounter) {
     const existingPaId = await findExistingPaForEncounter(encounter)
-    if (!existingPaId) {
-      banner = <EncounterContextBanner encounterId={encounter} />
-    }
-    // If a PA already exists, the routing helper would have sent us to /pa/{id}
-    // — landing here is a stale link. Show nothing extra; tabs cover the rest.
+    if (!existingPaId) banner = <EncounterContextBanner encounterId={encounter} />
   } else if (patient) {
     const patientRow = await findPatientById(patient)
     if (!patientRow) {
       banner = <PatientNotFoundBanner patientId={patient} />
     } else {
       const encounters = await findEncountersForPatient(patient)
-      banner = (
-        <PatientEncountersSection patient={patientRow} encounters={encounters} />
-      )
+      banner = <PatientEncountersSection patient={patientRow} encounters={encounters} />
     }
   }
 
+  const rows = await getQueueRows({ view, status, service, priority, q })
+  const activeView = isQueueViewKey(view) ? QUEUE_VIEWS[view] : null
+
   return (
-    <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
-      {/* Page header */}
+    <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-5">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-surface-foreground">Work Queue</h1>
+        <div>
+          <h1 className="text-2xl font-bold text-surface-foreground">Work Queue</h1>
+          {activeView ? (
+            <p className="text-sm text-muted-foreground mt-0.5">
+              {activeView.title} — {activeView.subline}
+            </p>
+          ) : (
+            <p className="text-sm text-muted-foreground mt-0.5">
+              Every prior auth, filterable.
+            </p>
+          )}
+        </div>
         <Link
           href="/pa/new"
           className="inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-primary text-primary-foreground hover:opacity-90 px-4 py-2 text-sm"
@@ -269,11 +243,10 @@ export default async function QueuePage({ searchParams }: QueuePageProps) {
         </Link>
       </div>
 
-      {/* Context banner from post-launch routing */}
       {banner}
 
-      {/* Client tabs (action / parked / submitted) */}
-      <QueueTabs />
+      <QueueFilters recordCount={rows.length} />
+      <QueueFilteredList rows={rows} />
     </div>
   )
 }

@@ -8,19 +8,29 @@ interface SidebarItem {
   href: string
   label: string
   icon: ReactNode
+  /** Optional count badge — shown on the right when > 0. */
+  countKey?: 'workQueueAttention'
 }
 
 const ITEMS: SidebarItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: <IconHome /> },
-  { href: '/queue', label: 'Work Queue', icon: <IconList /> },
+  { href: '/queue', label: 'Work Queue', icon: <IconList />, countKey: 'workQueueAttention' },
 ]
+
+export interface SidebarCounts {
+  workQueueAttention?: number
+}
+
+interface SidebarProps {
+  counts?: SidebarCounts
+}
 
 /**
  * Left sidebar nav — desktop primary. Replaces the legacy top-header
  * AppShell for (provider) routes. Highlights the active route using
  * usePathname() (must be a client component).
  */
-export default function Sidebar() {
+export default function Sidebar({ counts }: SidebarProps = {}) {
   const pathname = usePathname()
 
   return (
@@ -47,6 +57,7 @@ export default function Sidebar() {
         {ITEMS.map((item) => {
           const isActive =
             pathname === item.href || (pathname?.startsWith(item.href + '/') ?? false)
+          const badgeCount = item.countKey ? counts?.[item.countKey] ?? 0 : 0
           return (
             <Link
               key={item.href}
@@ -62,7 +73,12 @@ export default function Sidebar() {
               >
                 {item.icon}
               </span>
-              {item.label}
+              <span className="flex-1">{item.label}</span>
+              {badgeCount > 0 && (
+                <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-primary text-primary-foreground text-[10px] font-semibold tabular-nums">
+                  {badgeCount}
+                </span>
+              )}
             </Link>
           )
         })}
