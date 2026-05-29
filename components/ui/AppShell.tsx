@@ -16,8 +16,8 @@ export default function AppShell({ children }: AppShellProps) {
           PA Workflow
         </Link>
         <nav className="flex items-center gap-1 ml-2">
+          <NavLink href="/dashboard">Dashboard</NavLink>
           <NavLink href="/queue">Work Queue</NavLink>
-          <NavLink href="/demo">Demo Launcher</NavLink>
         </nav>
         <div className="ml-auto flex items-center gap-3 text-sm text-muted-foreground">
           <span>Demo Provider</span>
